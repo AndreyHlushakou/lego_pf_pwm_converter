@@ -28,12 +28,13 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+typedef void (*transition_callback)(void);
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define PERIOD_MAX (htim4.Init.Period)
+#define size_arr (10)                  //pwm   in arr
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,36 +45,29 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
-TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
 
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
-volatile uint8_t flag_irq = 0; //button exti
-volatile uint32_t time_irq = 0;//button exti
-volatile uint8_t flag_read = 0;//button exti
-
-
 uint8_t dataReceived=0;    //uart признак данное получено
 uint8_t dataTransmitted=1; //uart признак данное передано
 uint8_t str_uart_buffer[3];//uart buffer
 
-#define size_arr (10)                  //pwm   in arr
-volatile uint32_t falling11 = 0;       //pwm l in
-volatile uint8_t flag_falling11 = 0;   //pwm l in
-volatile uint8_t counter1 = 0;         //pwm l in arr
-volatile uint32_t arr_fall1[size_arr]; //pwm l in arr
+/*
+volatile uint8_t flag_irq = 0; //button exti
+volatile uint32_t time_irq = 0;//button exti
+volatile uint8_t flag_read = 0;//button exti
+void button_hnd(void);         //button
+*/
 
+
+volatile uint32_t falling11 = 0;       //pwm l in
 volatile uint32_t falling12 = 0;       //pwm r in
-volatile uint8_t flag_falling12 = 0;   //pwm r in
-volatile uint8_t counter2 = 0;         //pwm r in arr
-volatile uint32_t arr_fall2[size_arr]; //pwm r in arr
 
 /*
 volatile uint32_t falling21 = 0;
 volatile uint32_t falling22 = 0;
-volatile uint8_t flag_falling21 = 0;
-volatile uint8_t flag_falling22 = 0;
 */
 
 
@@ -87,14 +81,10 @@ uint32_t last_time1 = 0;
 uint32_t last_time2 = 0;
 GPIO_PinState last_state1 = GPIO_PIN_RESET;
 GPIO_PinState last_state2 = GPIO_PIN_RESET;
-volatile uint8_t changes_count1 = 0;
-volatile uint8_t changes_count2 = 0;
-enum state_pwm statepwm1 = LOW;
-enum state_pwm statepwm2 = LOW;
-
-
-volatile uint8_t flag_irq1 = 0;
-volatile uint8_t flag_irq2 = 0;
+uint8_t changes_count1 = 0;
+uint8_t changes_count2 = 0;
+volatile enum state_pwm statepwm1 = LOW;
+volatile enum state_pwm statepwm2 = LOW;
 
 /* USER CODE END PV */
 
@@ -104,26 +94,85 @@ static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_TIM3_Init(void);
+static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
-void pwm_generate_hnd(void);
-uint16_t falling_to_pwm(uint32_t falling);
-void button_hnd(void);
-void select_print_data(void);
+void user_init(void);
+void all_led_on(void);
+void all_led_off(void);
+
+void hnd_pfm_for_motor_1(void) ;
+
+enum state_pwm pwm_input_hnd_R(void);
+enum state_pwm pwm_input_hnd_L(void);
+enum state_pwm pwm_in_hnd_i(
+		GPIO_PinState state, GPIO_PinState *last_state,
+		uint8_t *changes_count, uint32_t *last_time,
+		volatile enum state_pwm *statepwm, uint8_t type);
+
+uint16_t falling_to_pwm(uint32_t falling, uint8_t type);
+
+void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, uint8_t type);
+
 void print_uart_data(uint32_t falling, uint8_t num);
 
-void fill_arr(uint8_t *counter, uint8_t *flag_falling, uint32_t *falling,
-              uint32_t arr_fall[], uint32_t falling0);
 
-void pwm_input_hnd(void);
-void pwm_in_hnd_i(GPIO_PinState state, GPIO_PinState *last_state,
-		uint8_t *changes_count, uint32_t *last_time, enum state_pwm *statepwm,
-		uint8_t type);
+void state_zero(void);
+void state_PWM_L(void);
+void state_MAX_L(void);
+void state_PWM_R(void);
+void state_MAX_R(void);
 
+void hal_tim_set_compare(uint16_t pwm);
+void enable_R(void);
+void enable_L(void);
+
+struct transition {
+    transition_callback worker;
+};
+
+struct transition FSM_table[3][3] = {
+    [HIGH][HIGH] = {state_zero},
+    [HIGH][PWM]  = {state_PWM_L},
+    [HIGH][LOW]  = {state_MAX_L},
+    [PWM][HIGH]  = {state_PWM_R},
+    [LOW][HIGH]  = {state_MAX_R},
+	//
+    [PWM][PWM] = {NULL},
+    [PWM][LOW] = {NULL},
+    [LOW][PWM] = {NULL},
+    [LOW][LOW] = {NULL}
+    //
+};
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void user_init(void) {
+	char str1[7] = "\nINIT;\n";
+    HAL_UART_Transmit(&huart3, (uint8_t*)str1, strlen(str1), 1000);
+
+    all_led_on();
+    HAL_Delay(1000);
+    all_led_off();
+}
+
+void all_led_on(void) {
+	HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET); //revers t.k pc13
+	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(led3_GPIO_Port, led3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(led4_GPIO_Port, led4_Pin, GPIO_PIN_SET);
+}
+
+void all_led_off(void) {
+	HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_SET); //revers t.k pc13
+	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(led3_GPIO_Port, led3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(led4_GPIO_Port, led4_Pin, GPIO_PIN_RESET);
+}
+
 
 /* USER CODE END 0 */
 
@@ -158,14 +207,11 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_USART3_UART_Init();
-  MX_TIM3_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_SET); //revers t.k pc13
-  HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_RESET);
+  user_init();
 
-
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);                  //servo
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);                  //servo
   HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET); //servo
   HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET); //servo
   HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_RESET); //servo
@@ -189,14 +235,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  hnd_pfm_for_motor_1();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  pwm_input_hnd();
-	  pwm_generate_hnd();
-	  //select_print_data();
-	  //button_hnd();
-	  //HAL_Delay(1);
+	  HAL_Delay(1);
   }
   /* USER CODE END 3 */
 }
@@ -381,6 +424,7 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
   sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
   {
@@ -393,61 +437,61 @@ static void MX_TIM2_Init(void)
 }
 
 /**
-  * @brief TIM3 Initialization Function
+  * @brief TIM4 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_TIM3_Init(void)
+static void MX_TIM4_Init(void)
 {
 
-  /* USER CODE BEGIN TIM3_Init 0 */
+  /* USER CODE BEGIN TIM4_Init 0 */
 
-  /* USER CODE END TIM3_Init 0 */
+  /* USER CODE END TIM4_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
 
-  /* USER CODE BEGIN TIM3_Init 1 */
+  /* USER CODE BEGIN TIM4_Init 1 */
 
-  /* USER CODE END TIM3_Init 1 */
-  htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 1-1;
-  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 62600;
-  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  /* USER CODE END TIM4_Init 1 */
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 1-1;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 62600;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
   {
     Error_Handler();
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  if (HAL_TIM_ConfigClockSource(&htim4, &sClockSourceConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
   {
     Error_Handler();
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 30000;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN TIM3_Init 2 */
+  /* USER CODE BEGIN TIM4_Init 2 */
 
-  /* USER CODE END TIM3_Init 2 */
-  HAL_TIM_MspPostInit(&htim3);
+  /* USER CODE END TIM4_Init 2 */
+  HAL_TIM_MspPostInit(&htim4);
 
 }
 
@@ -502,48 +546,48 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, led_Pin|led1_Pin|led2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, led3_Pin|led4_Pin|an1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, led1_Pin|led2_Pin|led3_Pin|led4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, an2_Pin|stby_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, stby_Pin|an2_Pin|an1_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : led_Pin led1_Pin led2_Pin */
-  GPIO_InitStruct.Pin = led_Pin|led1_Pin|led2_Pin;
+  /*Configure GPIO pin : led_Pin */
+  GPIO_InitStruct.Pin = led_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(led_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : led3_Pin led4_Pin an1_Pin */
-  GPIO_InitStruct.Pin = led3_Pin|led4_Pin|an1_Pin;
+  /*Configure GPIO pins : led1_Pin led2_Pin led3_Pin led4_Pin */
+  GPIO_InitStruct.Pin = led1_Pin|led2_Pin|led3_Pin|led4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : in1_Pin in2_Pin button_Pin */
-  GPIO_InitStruct.Pin = in1_Pin|in2_Pin|button_Pin;
+  /*Configure GPIO pin : button_Pin */
+  GPIO_InitStruct.Pin = button_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(button_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : an2_Pin stby_Pin */
-  GPIO_InitStruct.Pin = an2_Pin|stby_Pin;
+  /*Configure GPIO pins : stby_Pin an2_Pin an1_Pin */
+  GPIO_InitStruct.Pin = stby_Pin|an2_Pin|an1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : in2_Pin in1_Pin */
+  GPIO_InitStruct.Pin = in2_Pin|in1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -585,6 +629,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   }
 }
 
+/*
 void button_hnd(void)
 {
 	if(flag_irq && ((HAL_GetTick() - time_irq) > 200))
@@ -615,30 +660,32 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		else HAL_UART_Transmit(&huart3, (uint8_t*) "read mode OFF\n", strlen( "read mode OFF\n" ), 1000);
 	}
 
+}
+*/
 
-	if(GPIO_Pin == in1_Pin)
-	{
-
+void hnd_pfm_for_motor_1(void) {
+	enum state_pwm current_state = pwm_input_hnd_R();
+	enum state_pwm current_signal = pwm_input_hnd_L();
+	transition_callback worker = FSM_table[current_state][current_signal].worker;
+	if (worker != NULL) {
+		worker();
 	}
-
-	if(GPIO_Pin == in2_Pin)
-	{
-
-	}
-
 }
 
-void pwm_input_hnd(void) {
+enum state_pwm pwm_input_hnd_R(void) {
 	GPIO_PinState state1 = HAL_GPIO_ReadPin(in1_GPIO_Port, in1_Pin);
-	pwm_in_hnd_i(state1, &last_state1, &changes_count1, &last_time1, &statepwm1, 1);
-
-	GPIO_PinState state2 = HAL_GPIO_ReadPin(in2_GPIO_Port, in2_Pin);
-	pwm_in_hnd_i(state2, &last_state2, &changes_count2, &last_time2, &statepwm2, 2);
+	return pwm_in_hnd_i(state1, &last_state1, &changes_count1, &last_time1, &statepwm1, 1);
 }
 
-void pwm_in_hnd_i(GPIO_PinState state, GPIO_PinState *last_state,
-		uint8_t *changes_count, uint32_t *last_time, enum state_pwm *statepwm,
-		uint8_t type) {
+enum state_pwm pwm_input_hnd_L(void) {
+	GPIO_PinState state2 = HAL_GPIO_ReadPin(in2_GPIO_Port, in2_Pin);
+	return pwm_in_hnd_i(state2, &last_state2, &changes_count2, &last_time2, &statepwm2, 2);
+}
+
+enum state_pwm pwm_in_hnd_i(
+		GPIO_PinState state, GPIO_PinState *last_state,
+		uint8_t *changes_count, uint32_t *last_time,
+		volatile enum state_pwm *statepwm, uint8_t type) {
 	uint32_t current_time = HAL_GetTick();
 
     // Проверка изменения состояния входов
@@ -715,149 +762,111 @@ void pwm_in_hnd_i(GPIO_PinState state, GPIO_PinState *last_state,
 	    break;
 	}
 
-}
-
-/*
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-    uint32_t current_time = HAL_GetTick();
-
-    if (GPIO_Pin == in1_Pin) {
-        handle_pwm_input(GPIO_Pin, &last_time1, &statepwm1, led1_GPIO_Port, led1_Pin, led2_GPIO_Port, led2_Pin);
-    } else if (GPIO_Pin == in2_Pin) {
-        handle_pwm_input(GPIO_Pin, &last_time2, &statepwm2, led3_GPIO_Port, led3_Pin, led4_GPIO_Port, led4_Pin);
-    }
-}
-
-void handle_pwm_input(uint16_t GPIO_Pin, volatile uint32_t *last_time, volatile enum state_pwm *statepwm,
-                      GPIO_TypeDef *ledHigh_Port, uint16_t ledHigh_Pin,
-                      GPIO_TypeDef *ledPwm_Port, uint16_t ledPwm_Pin) {
-    static uint32_t prev_time = 0;
-    GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_Pin);
-    uint32_t current_time = HAL_GetTick();
-    uint32_t time_diff = current_time - *last_time;
-
-    if (state == GPIO_PIN_SET) {
-        if (time_diff > 10) {
-            *statepwm = PWM;
-        }
-    } else {
-        if (time_diff > 50) {
-            *statepwm = LOW;
-        }
-    }
-
-    if (time_diff < 10) {
-        *statepwm = HIGH;
-    }
-
-    *last_time = current_time;
-
-    // Управление светодиодами
-    switch (*statepwm) {
-        case HIGH:
-            HAL_GPIO_WritePin(ledHigh_Port, ledHigh_Pin, GPIO_PIN_SET);
-            HAL_GPIO_WritePin(ledPwm_Port, ledPwm_Pin, GPIO_PIN_RESET);
-            break;
-        case PWM:
-            HAL_GPIO_WritePin(ledHigh_Port, ledHigh_Pin, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(ledPwm_Port, ledPwm_Pin, GPIO_PIN_SET);
-            break;
-        case LOW:
-            HAL_GPIO_WritePin(ledHigh_Port, ledHigh_Pin, GPIO_PIN_SET);
-            HAL_GPIO_WritePin(ledPwm_Port, ledPwm_Pin, GPIO_PIN_SET);
-            break;
-    }
-}
-
-*/
-
-
-//#define PERIOD (htim2.Init.Period)
-
-
-void pwm_generate_hnd(void) {
-	if(statepwm1 == HIGH && statepwm2 == HIGH) {
-		HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET);
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
-	} else {
-		uint16_t pwm1 = 0;
-
-		if ( (statepwm1 == PWM || statepwm1 == LOW) && statepwm2 == HIGH ) {
-			HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_SET);
-
-			if (statepwm1 == PWM) pwm1 = falling_to_pwm(falling11);
-
-		}
-		else if ( (statepwm2 == PWM || statepwm2 == LOW) && statepwm1 == HIGH  ) {
-			HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_SET);
-
-			if (statepwm2 == PWM) pwm1 = falling_to_pwm(falling12);
-		}
-
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, pwm1);
-	}
+	return *statepwm;
 
 }
 
-uint16_t falling_to_pwm(uint32_t falling) {
+void hal_tim_set_compare(uint16_t pwm) {
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, pwm);
+}
+
+void state_zero(void) {
+	HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET);
+	hal_tim_set_compare(0);
+}
+
+void enable_L(void) {
+	HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_SET);
+}
+
+void enable_R(void) {
+	HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(stby_GPIO_Port, stby_Pin, GPIO_PIN_SET);
+}
+
+void state_MAX_L(void) {
+	enable_L();
+	hal_tim_set_compare(PERIOD_MAX);
+}
+
+void state_MAX_R(void) {
+	enable_R();
+	hal_tim_set_compare(PERIOD_MAX);
+}
+
+void state_PWM_L(void) {
+	enable_L();
+	uint16_t pwm1 = falling_to_pwm(falling11, 3);
+	hal_tim_set_compare(pwm1);
+}
+
+void state_PWM_R(void) {
+	enable_R();
+	uint16_t pwm1 = falling_to_pwm(falling12, 4);
+	hal_tim_set_compare(pwm1);
+}
+
+
+uint16_t falling_to_pwm(uint32_t falling, uint8_t type) {
 	uint16_t pwm1 = 0;
 
-	print_uart_data(falling, 1);
+	print_uart_data(falling, type);
 
-	if(1700 >= falling && falling >= 1500) {
-		pwm1 = 62600 * 389 / 1000;
-	} else if(1450 >= falling && falling >= 1250) {
-		pwm1 = 62600 * 512 / 1000;
-	} else if(1150 >= falling && falling >= 950) {
-		pwm1 = 62600 * 630 / 1000;
-	} else if(900 >= falling && falling >= 700) {
-		pwm1 = 62600 * 750 / 1000;
+	if(1600 >= falling && falling >= 1400) {
+		pwm1 = PERIOD_MAX * 389 / 1000;
+	} else if(1350 >= falling && falling >= 1150) {
+		pwm1 = PERIOD_MAX * 512 / 1000;
+	} else if(1100 >= falling && falling >= 900) {
+		pwm1 = PERIOD_MAX * 630 / 1000;
+	} else if(850 >= falling && falling >= 650) {
+		pwm1 = PERIOD_MAX * 750 / 1000;
 	} else if(600 >= falling && falling >= 400) {
-		pwm1 = 62600 * 872 / 1000;
+		pwm1 = PERIOD_MAX * 872 / 1000;
 	} else if(350 >= falling && falling >= 150) {
-		pwm1 = 62600 * 950 / 1000;
+		pwm1 = PERIOD_MAX * 950 / 1000;
 	}
 	return pwm1;
 }
 
+uint8_t counter1 = 0;
+uint8_t counter2 = 0;
+
+/*
+uint32_t arr_falling1[size_arr];
+uint32_t arr_falling2[size_arr];
+*/
+
+uint32_t arr_falling1 = 0;
+uint32_t arr_falling2 = 0;
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM1 ) {
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
-			//TIM1->CNT = 0;
 			__HAL_TIM_SET_COUNTER(&htim1, 0x0000);
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
 			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_2);
-			//falling11 = falling0;
-			//flag_falling11 = 1;
-
-			fill_arr(&counter1, &flag_falling11, &falling11, arr_fall1, falling0);
+			fill_arr(&counter1, &arr_falling1, &falling11, falling0, 1);
+			//print_uart_data(falling0, 2);
 		 }
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
-			//TIM1->CNT = 0;
 			__HAL_TIM_SET_COUNTER(&htim1, 0x0000);
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4) {
 			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_4);
-			//falling12 = falling0;
-			//flag_falling12 = 1;
-
-			fill_arr(&counter2, &flag_falling12, &falling12, arr_fall2, falling0);
-
+			fill_arr(&counter2, &arr_falling2, &falling12, falling0, 2);
+			//print_uart_data(falling0, 2);
 		}
 
 	 }
-
 
 /*
 	 if(htim->Instance == TIM2 )
@@ -884,37 +893,44 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 
 }
 
-void fill_arr(uint8_t *counter, uint8_t *flag_falling, uint32_t *falling, uint32_t arr_fall[], uint32_t falling0) {
+void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, uint8_t type) {
 
-    arr_fall[(*counter)++] = falling0;
+	*arr_falling += falling0;
+	(*counter)++;
+    if (*counter == size_arr) {
+        *falling = *arr_falling / size_arr;
 
-    if (*counter == size_arr && !(*flag_falling)) {
-        *falling = 0;
-        for (uint8_t var = 0; var < size_arr; var++) {
-            *falling += arr_fall[var];
-        }
-        *falling /= size_arr;
         *counter = 0;
-        *flag_falling = 1;
+        *arr_falling = 0;
+
+        print_uart_data(*falling, type);
     }
 }
 
-void select_print_data(void) {
-	if (flag_falling11) {
-		print_uart_data(falling11, 1);
-        flag_falling11 = 0;
-	}
+/*
+void fill_arr(uint8_t *counter, uint32_t arr_falling[], uint32_t *falling, uint32_t falling0, uint8_t type);
 
-	if (flag_falling12) {
-		print_uart_data(falling12, 2);
-        flag_falling12 = 0;
-	}
+void fill_arr(uint8_t *counter, uint32_t arr_falling[], uint32_t *falling, uint32_t falling0, uint8_t type) {
 
+	arr_falling[*counter] = falling0;
+	(*counter)++;
+    if (*counter == size_arr) {
+        *falling = 0;
+        for (uint8_t var = 0; var < size_arr; var++) {
+            *falling += arr_falling[var];
+        }
+        *falling /= size_arr;
+        *counter = 0;
+
+        print_uart_data(*falling, type);
+    }
 }
+*/
+
 
 void print_uart_data(uint32_t falling, uint8_t num) {
 	char str1[63] = {0,};
-    snprintf(str1, 63, "\nPulse%d %lu\n", num, falling);
+    snprintf(str1, 63, "\nResult %d= %lu\n", num, falling);
     HAL_UART_Transmit(&huart3, (uint8_t*)str1, strlen(str1), 1000);
 }
 
