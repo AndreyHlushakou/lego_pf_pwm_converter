@@ -29,6 +29,12 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 typedef void (*transition_callback)(void);
+
+typedef enum {
+    HIGH,
+	PWM,
+	LOW
+} STATE_PWM_PIN;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -62,29 +68,36 @@ void button_hnd(void);         //button
 */
 
 
-volatile uint32_t falling11 = 0;       //pwm l in
-volatile uint32_t falling12 = 0;       //pwm r in
+volatile uint32_t falling1_R = 0;       //pwm l in
+volatile uint32_t falling1_L = 0;       //pwm r in
+
+uint32_t falling_buffer = 0;
+
+
+uint32_t last_time1_R = 0;
+uint32_t last_time1_L = 0;
+GPIO_PinState last_state1_R = GPIO_PIN_RESET;
+GPIO_PinState last_state1_L = GPIO_PIN_RESET;
+uint8_t changes_count1_R = 0;
+uint8_t changes_count1_L = 0;
+STATE_PWM_PIN statepwm1_R = LOW;
+STATE_PWM_PIN statepwm1_L = LOW;
+
+uint8_t counter1_R = 0;
+uint8_t counter1_L = 0;
 
 /*
-volatile uint32_t falling21 = 0;
-volatile uint32_t falling22 = 0;
+uint32_t arr_falling1_R[size_arr];
+uint32_t arr_falling1_L[size_arr];
 */
 
+uint32_t arr_falling1_R = 0;
+uint32_t arr_falling1_L = 0;
 
-enum state_pwm {
-    HIGH,
-	PWM,
-	LOW
-};
-
-uint32_t last_time1 = 0;
-uint32_t last_time2 = 0;
-GPIO_PinState last_state1 = GPIO_PIN_RESET;
-GPIO_PinState last_state2 = GPIO_PIN_RESET;
-uint8_t changes_count1 = 0;
-uint8_t changes_count2 = 0;
-volatile enum state_pwm statepwm1 = LOW;
-volatile enum state_pwm statepwm2 = LOW;
+volatile uint8_t flag_pwm1_R = 0;
+volatile uint8_t flag_pwm1_L = 0;
+volatile uint32_t last_capture_time1_R = 0;
+volatile uint32_t last_capture_time1_L = 0;
 
 /* USER CODE END PV */
 
@@ -100,20 +113,27 @@ void user_init(void);
 void all_led_on(void);
 void all_led_off(void);
 
+void check_pwm_signal(void);
+
 void hnd_pfm_for_motor_1(void) ;
 
-enum state_pwm pwm_input_hnd_R(void);
-enum state_pwm pwm_input_hnd_L(void);
-enum state_pwm pwm_in_hnd_i(
+STATE_PWM_PIN pwm_input_hnd_R(void);
+STATE_PWM_PIN pwm_input_hnd_L(void);
+STATE_PWM_PIN pwm_in_hnd_i(
 		GPIO_PinState state, GPIO_PinState *last_state,
 		uint8_t *changes_count, uint32_t *last_time,
-		volatile enum state_pwm *statepwm, uint8_t type);
+		STATE_PWM_PIN *statepwm, char type,
+		volatile uint8_t flag_pwm1);
 
-uint16_t falling_to_pwm(uint32_t falling, uint8_t type);
+void led_state_pwm(STATE_PWM_PIN *statepwm, char type) ;
 
-void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, uint8_t type);
+uint16_t falling_to_pwm(volatile uint32_t falling, char *type)  ;
 
-void print_uart_data(uint32_t falling, uint8_t num);
+void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, char *type);
+
+void print_uniq_uart_data(volatile uint32_t falling, char *str);
+
+void print_uart_data(volatile uint32_t falling, char *str);
 
 
 void state_zero(void);
@@ -131,11 +151,12 @@ struct transition {
 };
 
 struct transition FSM_table[3][3] = {
+   //LEFT//RIGHT//
     [HIGH][HIGH] = {state_zero},
-    [HIGH][PWM]  = {state_PWM_L},
-    [HIGH][LOW]  = {state_MAX_L},
-    [PWM][HIGH]  = {state_PWM_R},
-    [LOW][HIGH]  = {state_MAX_R},
+    [HIGH][PWM]  = {state_PWM_R},
+    [HIGH][LOW]  = {state_MAX_R},
+    [PWM][HIGH]  = {state_PWM_L},
+    [LOW][HIGH]  = {state_MAX_L},
 	//
     [PWM][PWM] = {NULL},
     [PWM][LOW] = {NULL},
@@ -235,11 +256,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  check_pwm_signal();
 	  hnd_pfm_for_motor_1();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_Delay(1);
+	  HAL_Delay(5);
   }
   /* USER CODE END 3 */
 }
@@ -581,8 +603,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : in2_Pin in1_Pin */
-  GPIO_InitStruct.Pin = in2_Pin|in1_Pin;
+  /*Configure GPIO pins : in1_R_Pin in1_L_Pin */
+  GPIO_InitStruct.Pin = in1_R_Pin|in1_L_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -664,28 +686,30 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 */
 
 void hnd_pfm_for_motor_1(void) {
-	enum state_pwm current_state = pwm_input_hnd_R();
-	enum state_pwm current_signal = pwm_input_hnd_L();
-	transition_callback worker = FSM_table[current_state][current_signal].worker;
+	STATE_PWM_PIN current_state_R = pwm_input_hnd_R();
+	STATE_PWM_PIN current_state_L = pwm_input_hnd_L();
+	transition_callback worker = FSM_table[current_state_L][current_state_R].worker;
 	if (worker != NULL) {
 		worker();
 	}
 }
 
-enum state_pwm pwm_input_hnd_R(void) {
-	GPIO_PinState state1 = HAL_GPIO_ReadPin(in1_GPIO_Port, in1_Pin);
-	return pwm_in_hnd_i(state1, &last_state1, &changes_count1, &last_time1, &statepwm1, 1);
+STATE_PWM_PIN pwm_input_hnd_R(void) {
+	GPIO_PinState stateR = HAL_GPIO_ReadPin(in1_R_GPIO_Port, in1_R_Pin);
+	return pwm_in_hnd_i(stateR, &last_state1_R, &changes_count1_R, &last_time1_R, &statepwm1_R, 'R', flag_pwm1_R);
 }
 
-enum state_pwm pwm_input_hnd_L(void) {
-	GPIO_PinState state2 = HAL_GPIO_ReadPin(in2_GPIO_Port, in2_Pin);
-	return pwm_in_hnd_i(state2, &last_state2, &changes_count2, &last_time2, &statepwm2, 2);
+STATE_PWM_PIN pwm_input_hnd_L(void) {
+	GPIO_PinState stateL = HAL_GPIO_ReadPin(in1_L_GPIO_Port, in1_L_Pin);
+	return pwm_in_hnd_i(stateL, &last_state1_L, &changes_count1_L, &last_time1_L, &statepwm1_L, 'L', flag_pwm1_L);
 }
 
-enum state_pwm pwm_in_hnd_i(
+STATE_PWM_PIN pwm_in_hnd_i(
 		GPIO_PinState state, GPIO_PinState *last_state,
 		uint8_t *changes_count, uint32_t *last_time,
-		volatile enum state_pwm *statepwm, uint8_t type) {
+		STATE_PWM_PIN *statepwm, char type,
+		volatile uint8_t flag_pwm1) {
+	/*
 	uint32_t current_time = HAL_GetTick();
 
     // Проверка изменения состояния входов
@@ -709,17 +733,28 @@ enum state_pwm pwm_in_hnd_i(
         // Сбрасываем счетчик изменений
         *changes_count = 0;
 	}
+*/
 
+	if (flag_pwm1) {
+		*statepwm = PWM;
+	} else *statepwm = (state == GPIO_PIN_SET) ? HIGH : LOW;
+
+	led_state_pwm(statepwm, type);
+
+	return *statepwm;
+}
+
+void led_state_pwm(STATE_PWM_PIN *statepwm, char type) {
 	switch(*statepwm)
 	{
 	    case HIGH: {
 	    	switch (type) {
-				case 1: {
+				case 'L': {
 			    	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_SET);
 			    	HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_RESET);
 				}
 				break;
-				case 2: {
+				case 'R': {
 			    	HAL_GPIO_WritePin(led3_GPIO_Port, led3_Pin, GPIO_PIN_SET);
 		            HAL_GPIO_WritePin(led4_GPIO_Port, led4_Pin, GPIO_PIN_RESET);
 				}
@@ -730,12 +765,12 @@ enum state_pwm pwm_in_hnd_i(
 	    break;
 	    case PWM: {
 	    	switch (type) {
-				case 1: {
+				case 'L': {
 			    	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_RESET);
 			    	HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_SET);
 				}
 				break;
-				case 2: {
+				case 'R': {
 			    	HAL_GPIO_WritePin(led3_GPIO_Port, led3_Pin, GPIO_PIN_RESET);
 		            HAL_GPIO_WritePin(led4_GPIO_Port, led4_Pin, GPIO_PIN_SET);
 				}
@@ -746,12 +781,12 @@ enum state_pwm pwm_in_hnd_i(
 	    break;
 	    case LOW: {
 	    	switch (type) {
-				case 1: {
+				case 'L': {
 			    	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_SET);
 			    	HAL_GPIO_WritePin(led2_GPIO_Port, led2_Pin, GPIO_PIN_SET);
 				}
 				break;
-				case 2: {
+				case 'R': {
 			    	HAL_GPIO_WritePin(led3_GPIO_Port, led3_Pin, GPIO_PIN_SET);
 		            HAL_GPIO_WritePin(led4_GPIO_Port, led4_Pin, GPIO_PIN_SET);
 				}
@@ -761,9 +796,6 @@ enum state_pwm pwm_in_hnd_i(
 	    }
 	    break;
 	}
-
-	return *statepwm;
-
 }
 
 void hal_tim_set_compare(uint16_t pwm) {
@@ -775,6 +807,7 @@ void state_zero(void) {
 	HAL_GPIO_WritePin(an1_GPIO_Port, an1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(an2_GPIO_Port, an2_Pin, GPIO_PIN_RESET);
 	hal_tim_set_compare(0);
+	//print_uart_data(0, "STATE ZERO");
 }
 
 void enable_L(void) {
@@ -792,69 +825,78 @@ void enable_R(void) {
 void state_MAX_L(void) {
 	enable_L();
 	hal_tim_set_compare(PERIOD_MAX);
+	//print_uart_data(0, "STATE L MAX");
 }
 
 void state_MAX_R(void) {
 	enable_R();
 	hal_tim_set_compare(PERIOD_MAX);
+	//print_uart_data(0, "STATE R MAX");
 }
 
 void state_PWM_L(void) {
 	enable_L();
-	uint16_t pwm1 = falling_to_pwm(falling11, 3);
+	uint16_t pwm1 = falling_to_pwm(falling1_L, "STATE L PWM");
 	hal_tim_set_compare(pwm1);
 }
 
 void state_PWM_R(void) {
 	enable_R();
-	uint16_t pwm1 = falling_to_pwm(falling12, 4);
+	uint16_t pwm1 = falling_to_pwm(falling1_R, "STATE R PWM");
 	hal_tim_set_compare(pwm1);
 }
 
 
-uint16_t falling_to_pwm(uint32_t falling, uint8_t type) {
+uint16_t falling_to_pwm(volatile uint32_t falling, char *type) {
 	uint16_t pwm1 = 0;
 
-	print_uart_data(falling, type);
+	//print_uart_data(falling, type);
+    print_uniq_uart_data(falling, type);
 
 	if(1600 >= falling && falling >= 1400) {
-		pwm1 = PERIOD_MAX * 389 / 1000;
+		pwm1 = PERIOD_MAX * 266 / 1000;
 	} else if(1350 >= falling && falling >= 1150) {
-		pwm1 = PERIOD_MAX * 512 / 1000;
+		pwm1 = PERIOD_MAX * 389 / 1000;
 	} else if(1100 >= falling && falling >= 900) {
-		pwm1 = PERIOD_MAX * 630 / 1000;
+		pwm1 = PERIOD_MAX * 512 / 1000;
 	} else if(850 >= falling && falling >= 650) {
-		pwm1 = PERIOD_MAX * 750 / 1000;
+		pwm1 = PERIOD_MAX * 630 / 1000;
 	} else if(600 >= falling && falling >= 400) {
-		pwm1 = PERIOD_MAX * 872 / 1000;
+		pwm1 = PERIOD_MAX * 750 / 1000;
 	} else if(350 >= falling && falling >= 150) {
-		pwm1 = PERIOD_MAX * 950 / 1000;
+		pwm1 = PERIOD_MAX * 872 / 1000;
 	}
 	return pwm1;
 }
 
-uint8_t counter1 = 0;
-uint8_t counter2 = 0;
+void check_pwm_signal(void) {
+    uint32_t current_time = HAL_GetTick();
 
-/*
-uint32_t arr_falling1[size_arr];
-uint32_t arr_falling2[size_arr];
-*/
+    // Если прошло больше 100 мс с последнего захвата фронта - считаем, что ШИМ отсутствует
+    if (flag_pwm1_R == 1 && (current_time - last_capture_time1_R > 5)) {
+        flag_pwm1_R = 0; // ШИМ отсутствует
+    }
 
-uint32_t arr_falling1 = 0;
-uint32_t arr_falling2 = 0;
+    if (flag_pwm1_L == 1 && (current_time - last_capture_time1_L > 5)) {
+        flag_pwm1_L = 0; // ШИМ отсутствует
+    }
+}
+
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM1 ) {
+		uint32_t current_time = HAL_GetTick(); // Получаем текущее время в мс
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
 			__HAL_TIM_SET_COUNTER(&htim1, 0x0000);
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
 			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_2);
-			fill_arr(&counter1, &arr_falling1, &falling11, falling0, 1);
-			//print_uart_data(falling0, 2);
+			fill_arr(&counter1_R, &arr_falling1_R, &falling1_R, falling0, "TIMER R");
+
+            flag_pwm1_R = 1; // ШИМ обнаружен
+            last_capture_time1_R = current_time;
 		 }
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
@@ -862,38 +904,17 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4) {
 			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_4);
-			fill_arr(&counter2, &arr_falling2, &falling12, falling0, 2);
-			//print_uart_data(falling0, 2);
+			fill_arr(&counter1_L, &arr_falling1_L, &falling1_L, falling0, "TIMER L");
+
+            flag_pwm1_L = 1; // ШИМ обнаружен
+            last_capture_time1_L = current_time;
 		}
 
 	 }
 
-/*
-	 if(htim->Instance == TIM2 )
-	 {
-		 if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1 && !flag_falling21)
-		 {
-			 TIM2->CNT = 0;
-
-			 falling21 = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_2);
-			 flag_falling21 =1;
-
-		 }
-
-		 if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3 && !flag_falling22)
-		 {
-			 TIM2->CNT = 0;
-
-			 falling22 = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_4);
-			 flag_falling22 =1;
-
-		 }
-	 }
-*/
-
 }
 
-void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, uint8_t type) {
+void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, char *type) {
 
 	*arr_falling += falling0;
 	(*counter)++;
@@ -903,7 +924,8 @@ void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *fallin
         *counter = 0;
         *arr_falling = 0;
 
-        print_uart_data(*falling, type);
+        //print_uart_data(*falling, type);
+        print_uniq_uart_data(*falling, type);
     }
 }
 
@@ -927,10 +949,16 @@ void fill_arr(uint8_t *counter, uint32_t arr_falling[], uint32_t *falling, uint3
 }
 */
 
+void print_uniq_uart_data(volatile uint32_t falling, char *str) {
+	if (falling != falling_buffer) {
+		print_uart_data(falling, str);
+		falling_buffer = falling;
+	}
+}
 
-void print_uart_data(uint32_t falling, uint8_t num) {
+void print_uart_data(volatile uint32_t falling, char *str) {
 	char str1[63] = {0,};
-    snprintf(str1, 63, "\nResult %d= %lu\n", num, falling);
+    snprintf(str1, 63, "\nResult %s= %lu\n", str, falling);
     HAL_UART_Transmit(&huart3, (uint8_t*)str1, strlen(str1), 1000);
 }
 

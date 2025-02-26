@@ -78,10 +78,10 @@ void Error_Handler(void);
 #define an2_GPIO_Port GPIOB
 #define an1_Pin GPIO_PIN_5
 #define an1_GPIO_Port GPIOB
-#define in2_Pin GPIO_PIN_8
-#define in2_GPIO_Port GPIOB
-#define in1_Pin GPIO_PIN_9
-#define in1_GPIO_Port GPIOB
+#define in1_R_Pin GPIO_PIN_8
+#define in1_R_GPIO_Port GPIOB
+#define in1_L_Pin GPIO_PIN_9
+#define in1_L_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
