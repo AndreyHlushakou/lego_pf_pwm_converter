@@ -44,7 +44,7 @@ typedef struct {
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define PERIOD_MAX (htim4.Init.Period)
-#define size_arr (100)                  //pwm   in arr
+#define size_arr (1)                  //pwm   in arr
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -75,6 +75,7 @@ uint8_t str_uart_buffer[3];//uart buffer
 volatile uint32_t falling1_R = 0; //pwm R in
 volatile uint32_t falling1_L = 0; //pwm L in
 uint32_t falling_buffer = 0;
+uint32_t pwm_old = 0;
 
 uint8_t counter1_R = 0;
 uint8_t counter1_L = 0;
@@ -245,6 +246,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  //button_hnd();
 	  HAL_Delay(2);
   }
   /* USER CODE END 3 */
@@ -334,7 +336,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
   sConfigIC.ICFilter = 0;
@@ -342,19 +344,19 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
   sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
   sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
   {
@@ -574,6 +576,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : in1_L_Pin in1_R_Pin */
+  GPIO_InitStruct.Pin = in1_L_Pin|in1_R_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pin : button_Pin */
   GPIO_InitStruct.Pin = button_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
@@ -587,12 +595,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : in1_R_Pin in1_L_Pin */
-  GPIO_InitStruct.Pin = in1_R_Pin|in1_L_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
@@ -604,12 +606,10 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-  if (huart == &huart3)
-  {
+  if (huart == &huart3) {
     dataReceived=1;
 
-    if( dataTransmitted != 0 )
-    {
+    if (dataTransmitted != 0) {
       HAL_UART_Transmit_IT(&huart3, str_uart_buffer, 1);
       dataReceived=0;
       dataTransmitted=0;
@@ -621,12 +621,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 
-  if(huart == &huart3)
-  {
+  if (huart == &huart3) {
     dataTransmitted=1;
 
-    if( dataReceived != 0 )
-    {
+    if (dataReceived != 0) {
       HAL_UART_Transmit_IT(&huart3, str_uart_buffer, 1);
       dataReceived=0;
       dataTransmitted=0;
@@ -634,11 +632,22 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   }
 }
 
+
 /*
-void button_hnd(void)
-{
-	if(flag_irq && ((HAL_GetTick() - time_irq) > 200))
-	{
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if(GPIO_Pin == button_Pin && !flag_irq) {
+		HAL_NVIC_DisableIRQ(EXTI15_10_IRQn); // сразу же отключаем прерывания на этом пине
+		// либо выполняем какое-то действие прямо тут, либо поднимаем флажок
+		flag_irq = 1;
+		time_irq = HAL_GetTick();
+		HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
+		if (!flag_read) HAL_UART_Transmit(&huart3, (uint8_t*) "read mode ON\n", strlen( "read mode ON\n" ), 1000);
+		else HAL_UART_Transmit(&huart3, (uint8_t*) "read mode OFF\n", strlen( "read mode OFF\n" ), 1000);
+	}
+}
+
+void button_hnd(void) {
+	if (flag_irq && ((HAL_GetTick() - time_irq) > 200)) {
 		__HAL_GPIO_EXTI_CLEAR_IT(button_Pin);  // очищаем бит EXTI_PR
 		NVIC_ClearPendingIRQ(EXTI15_10_IRQn); // очищаем бит NVIC_ICPRx
 		HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);   // включаем внешнее прерывание
@@ -647,26 +656,10 @@ void button_hnd(void)
 
 		HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_SET);
 	}
-	if (flag_read) {
-		HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
-	}
-}
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if(GPIO_Pin == button_Pin && !flag_irq)
-	{
-		HAL_NVIC_DisableIRQ(EXTI15_10_IRQn); // сразу же отключаем прерывания на этом пине
-		// либо выполняем какое-то действие прямо тут, либо поднимаем флажок
-		flag_irq = 1;
-		time_irq = HAL_GetTick();
-		HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
-		if(!flag_read) HAL_UART_Transmit(&huart3, (uint8_t*) "read mode ON\n", strlen( "read mode ON\n" ), 1000);
-		else HAL_UART_Transmit(&huart3, (uint8_t*) "read mode OFF\n", strlen( "read mode OFF\n" ), 1000);
-	}
-
+	if (flag_read) HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
 }
 */
+
 
 void hnd_state_for_motor1(void) {
 	STATE_PWM_PIN current_state_R = hnd_state_in_pwm_R();
@@ -700,9 +693,9 @@ STATE_PWM_PIN hnd_state_in_pwm_i(
 		char type) {
 
     uint32_t current_time = HAL_GetTick();
-    // Если прошло больше 5 мс с последнего захвата фронта - считаем, что ШИМ отсутствует
+    // Если прошло больше 5 мс с последнего захвата фронта - считаем, что Ш�?М отсутствует
     if (*flag_pwm == 1 && (current_time - last_capture_time > 5)) {
-    	*flag_pwm = 0; // ШИМ отсутствует
+    	*flag_pwm = 0; // Ш�?М отсутствует
     }
 
 	if (*flag_pwm) *statepwm = PWM;
@@ -816,24 +809,61 @@ void state_PWM_R(void) {
 
 
 uint16_t falling_to_pwm(volatile uint32_t falling, char *type) {
-	uint16_t pwm1 = PERIOD_MAX;
+	uint16_t pwm1 = pwm_old;
 
 	//print_uart_data(falling, type);
-    print_uniq_uart_data(falling, type);
+    //print_uniq_uart_data(falling, type);
 
-	if(1600 >= falling && falling >= 1400) {
+
+	switch (falling) {
+		case 500: {
+			pwm1 = PERIOD_MAX * 266 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		case 700: {
+			pwm1 = PERIOD_MAX * 389 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		case 1000: {
+			pwm1 = PERIOD_MAX * 266 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		case 1300: {
+			pwm1 = PERIOD_MAX * 630 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		case 1500: {
+			pwm1 = PERIOD_MAX * 750 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		case 1800: {
+			pwm1 = PERIOD_MAX * 872 / 1000;
+			pwm_old = pwm1;
+		}
+			break;
+		default: pwm1 = pwm_old;
+	}
+/*
+	       if (400 <= falling && falling <= 600) { //500
 		pwm1 = PERIOD_MAX * 266 / 1000;
-	} else if(1350 >= falling && falling >= 1150) {
+	} else if (600 <= falling && falling <= 800) { //700
 		pwm1 = PERIOD_MAX * 389 / 1000;
-	} else if(1100 >= falling && falling >= 900) {
+	} else if (900 <= falling && falling <= 1100) { //1000
 		pwm1 = PERIOD_MAX * 512 / 1000;
-	} else if(850 >= falling && falling >= 650) {
+	} else if (1200 <= falling && falling <= 1400) { //1300
 		pwm1 = PERIOD_MAX * 630 / 1000;
-	} else if(600 >= falling && falling >= 400) {
+	} else if (1400 <= falling && falling <= 1600) { //1500
 		pwm1 = PERIOD_MAX * 750 / 1000;
-	} else if(350 >= falling && falling >= 150) {
+	} else if (1700 <= falling && falling <= 1900) { //1800
 		pwm1 = PERIOD_MAX * 872 / 1000;
 	}
+*/
+
 	return pwm1;
 }
 
@@ -870,11 +900,15 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 }
 
 void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, char *type) {
+	//*falling = (falling0 / 100) * 100;
+	//print_uniq_uart_data(*falling, type);
 
 	*arr_falling += falling0;
 	(*counter)++;
     if (*counter == size_arr) {
         *falling = *arr_falling / size_arr;
+
+        *falling = (*falling / 100) * 100;
 
         *counter = 0;
         *arr_falling = 0;
@@ -882,6 +916,8 @@ void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *fallin
         //print_uart_data(*falling, type);
         print_uniq_uart_data(*falling, type);
     }
+
+
 }
 
 void print_uniq_uart_data(volatile uint32_t falling, char *str) {
