@@ -44,7 +44,8 @@ typedef struct {
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define PERIOD_MAX (htim4.Init.Period)
-#define size_arr (1)                  //pwm   in arr
+#define HUART_3 (&huart3)
+#define HTIM_1 (&htim1)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -160,7 +161,7 @@ void print_uart_data(volatile uint32_t falling, char *str);
 
 void led_init(void) {
 	char str1[7] = "\nINIT;\n";
-    HAL_UART_Transmit(&huart3, (uint8_t*)str1, strlen(str1), 1000);
+    HAL_UART_Transmit(HUART_3, (uint8_t*)str1, strlen(str1), 1000);
 
     all_led_on();
     HAL_Delay(1000);
@@ -242,7 +243,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  hnd_state_for_motor1();
+	  //hnd_state_for_motor1();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -314,7 +315,7 @@ static void MX_TIM1_Init(void)
   htim1.Init.Prescaler = 72-1;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 65000-1;
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
@@ -338,26 +339,29 @@ static void MX_TIM1_Init(void)
   }
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
-  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
-  sConfigIC.ICFilter = 0;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV8;
+  sConfigIC.ICFilter = 15;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
   sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
+  sConfigIC.ICFilter = 0;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICFilter = 15;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
   sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
+  sConfigIC.ICFilter = 0;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
@@ -606,16 +610,16 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-  if (huart == &huart3) {
+  if (huart == HUART_3) {
     dataReceived=1;
 
     if (dataTransmitted != 0) {
-      HAL_UART_Transmit_IT(&huart3, str_uart_buffer, 1);
+      HAL_UART_Transmit_IT(HUART_3, str_uart_buffer, 1);
       dataReceived=0;
       dataTransmitted=0;
     }
 
-    HAL_UART_Receive_IT (&huart3, str_uart_buffer, 1);
+    HAL_UART_Receive_IT (HUART_3, str_uart_buffer, 1);
   }
 }
 
@@ -625,7 +629,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
     dataTransmitted=1;
 
     if (dataReceived != 0) {
-      HAL_UART_Transmit_IT(&huart3, str_uart_buffer, 1);
+      HAL_UART_Transmit_IT(HUART_3, str_uart_buffer, 1);
       dataReceived=0;
       dataTransmitted=0;
     }
@@ -641,8 +645,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		flag_irq = 1;
 		time_irq = HAL_GetTick();
 		HAL_GPIO_WritePin(led_GPIO_Port, led_Pin, GPIO_PIN_RESET);
-		if (!flag_read) HAL_UART_Transmit(&huart3, (uint8_t*) "read mode ON\n", strlen( "read mode ON\n" ), 1000);
-		else HAL_UART_Transmit(&huart3, (uint8_t*) "read mode OFF\n", strlen( "read mode OFF\n" ), 1000);
+		if (!flag_read) HAL_UART_Transmit(HUART_3, (uint8_t*) "read mode ON\n", strlen( "read mode ON\n" ), 1000);
+		else HAL_UART_Transmit(HUART_3, (uint8_t*) "read mode OFF\n", strlen( "read mode OFF\n" ), 1000);
 	}
 }
 
@@ -807,47 +811,34 @@ void state_PWM_R(void) {
 	hal_tim_set_compare(pwm1);
 }
 
+typedef struct {
+    uint32_t falling;
+    uint16_t pwm_ratio;
+} FallingToPwmMap;
+
+static const FallingToPwmMap map[] = {
+    {500,  266},
+    {700,  389},
+    {1000, 512},
+    {1300, 630},
+    {1500, 750},
+    {1800, 872}
+};
 
 uint16_t falling_to_pwm(volatile uint32_t falling, char *type) {
-	uint16_t pwm1 = pwm_old;
-
 	//print_uart_data(falling, type);
     //print_uniq_uart_data(falling, type);
 
 
-	switch (falling) {
-		case 500: {
-			pwm1 = PERIOD_MAX * 266 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		case 700: {
-			pwm1 = PERIOD_MAX * 389 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		case 1000: {
-			pwm1 = PERIOD_MAX * 266 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		case 1300: {
-			pwm1 = PERIOD_MAX * 630 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		case 1500: {
-			pwm1 = PERIOD_MAX * 750 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		case 1800: {
-			pwm1 = PERIOD_MAX * 872 / 1000;
-			pwm_old = pwm1;
-		}
-			break;
-		default: pwm1 = pwm_old;
-	}
+    for (size_t i = 0; i < sizeof(map) / sizeof(map[0]); i++) {
+    	if (falling == map[i].falling) {
+    		pwm_old = (PERIOD_MAX * map[i].pwm_ratio) / 1000;
+            return pwm_old;
+        }
+    }
+	return pwm_old;
+}
+
 /*
 	       if (400 <= falling && falling <= 600) { //500
 		pwm1 = PERIOD_MAX * 266 / 1000;
@@ -864,9 +855,6 @@ uint16_t falling_to_pwm(volatile uint32_t falling, char *type) {
 	}
 */
 
-	return pwm1;
-}
-
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
@@ -874,30 +862,32 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		uint32_t current_time = HAL_GetTick(); // Получаем текущее время в мс
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
-			__HAL_TIM_SET_COUNTER(&htim1, 0x0000);
+			__HAL_TIM_SET_COUNTER(HTIM_1, 0x0000);
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
-			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_2);
+			uint32_t falling0 = HAL_TIM_ReadCapturedValue(HTIM_1, TIM_CHANNEL_2);
 			fill_arr(&counter1_R, &arr_falling1_R, &falling1_R, falling0, "TIM1  R");
 
-            flag_pwm1_R = 1; // ШИМ обнаружен
+            flag_pwm1_R = 1; // Ш�?М обнаружен
             last_capture_time1_R = current_time;
 		 }
 
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
-			__HAL_TIM_SET_COUNTER(&htim1, 0x0000);
+			__HAL_TIM_SET_COUNTER(HTIM_1, 0x0000);
 		}
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4) {
-			uint32_t falling0 = HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_4);
+			uint32_t falling0 = HAL_TIM_ReadCapturedValue(HTIM_1, TIM_CHANNEL_4);
 			fill_arr(&counter1_L, &arr_falling1_L, &falling1_L, falling0, "TIM1  L");
 
-            flag_pwm1_L = 1; // ШИМ обнаружен
+            flag_pwm1_L = 1; // Ш�?М обнаружен
             last_capture_time1_L = current_time;
 		}
 
 	 }
 
 }
+
+#define size_arr (10)//pwm   in arr
 
 void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *falling, uint32_t falling0, char *type) {
 	//*falling = (falling0 / 100) * 100;
@@ -916,8 +906,6 @@ void fill_arr(uint8_t *counter, uint32_t *arr_falling, volatile uint32_t *fallin
         //print_uart_data(*falling, type);
         print_uniq_uart_data(*falling, type);
     }
-
-
 }
 
 void print_uniq_uart_data(volatile uint32_t falling, char *str) {
@@ -930,7 +918,7 @@ void print_uniq_uart_data(volatile uint32_t falling, char *str) {
 void print_uart_data(volatile uint32_t falling, char *str) {
 	char str1[63] = {0,};
     snprintf(str1, 63, "\nResult %s= %lu\n", str, falling);
-    HAL_UART_Transmit(&huart3, (uint8_t*)str1, strlen(str1), 1000);
+    HAL_UART_Transmit(HUART_3, (uint8_t*)str1, strlen(str1), 1000);
 }
 
 /* USER CODE END 4 */
