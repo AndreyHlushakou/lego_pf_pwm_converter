@@ -61,27 +61,24 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define led_Pin GPIO_PIN_13
 #define led_GPIO_Port GPIOC
-#define led1_Pin GPIO_PIN_1
-#define led1_GPIO_Port GPIOA
-#define led2_Pin GPIO_PIN_3
-#define led2_GPIO_Port GPIOA
-#define led3_Pin GPIO_PIN_5
-#define led3_GPIO_Port GPIOA
-#define led4_Pin GPIO_PIN_6
-#define led4_GPIO_Port GPIOA
-#define in1_L_Pin GPIO_PIN_0
-#define in1_L_GPIO_Port GPIOB
-#define in1_R_Pin GPIO_PIN_1
-#define in1_R_GPIO_Port GPIOB
-#define button_Pin GPIO_PIN_15
-#define button_GPIO_Port GPIOA
-#define button_EXTI_IRQn EXTI15_10_IRQn
-#define stby_Pin GPIO_PIN_3
-#define stby_GPIO_Port GPIOB
+#define in2_L_Pin GPIO_PIN_1
+#define in2_L_GPIO_Port GPIOA
+#define in2_R_Pin GPIO_PIN_3
+#define in2_R_GPIO_Port GPIOA
+#define in1_L_Pin GPIO_PIN_9
+#define in1_L_GPIO_Port GPIOA
+#define in1_R_Pin GPIO_PIN_11
+#define in1_R_GPIO_Port GPIOA
+#define bn2_Pin GPIO_PIN_15
+#define bn2_GPIO_Port GPIOA
+#define bn1_Pin GPIO_PIN_3
+#define bn1_GPIO_Port GPIOB
 #define an2_Pin GPIO_PIN_4
 #define an2_GPIO_Port GPIOB
 #define an1_Pin GPIO_PIN_5
 #define an1_GPIO_Port GPIOB
+#define stby_Pin GPIO_PIN_6
+#define stby_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
