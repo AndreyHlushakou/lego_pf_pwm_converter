@@ -1,0 +1,34 @@
+.SUBCKT BSS131  drain  gate  source
+
+Lg     gate  g1    3n
+Ld     drain d1    1n
+Ls     source s1   3n
+Rs      s1    s2   0.074
+
+Rg     g1    g2     10
+M1      d2    g2    s2    s2    DMOS    L=1u   W=1u
+.MODEL DMOS NMOS ( KP= 0.223  VTO=1.6  THETA=0  VMAX=1.5e5  ETA=0  LEVEL=3)
+Rd     d2    d1a    6.07 TC=11m
+.MODEL MVDR NMOS (KP=0.55 VTO=-1.4   LAMBDA=0.15)
+Mr d1 d2a d1a d1a MVDR W=1u L=1u
+Rx d2a d1a 1m
+
+Dbd     s2    d2    Dbt
+.MODEL     Dbt    D(BV=290   M=0.5  CJO=34.44p  VJ=0.5V)
+Dbody   s2   21    DBODY
+.MODEL DBODY  D(IS=7p  N=1.2  RS=475u  EG=1.12  TT=60n)
+Rdiode  d1  21    714.29m TC=1m
+
+.MODEL   sw    NMOS(VTO=0  KP=10   LEVEL=1)
+Maux      g2   c    a    a   sw
+Maux2     b    d    g2    g2   sw
+Eaux      c    a    d2    g2   1
+Eaux2     d    g2   d2    g2   -1
+Cox       b    d2   99.4p
+.MODEL     DGD    D(M=1   CJO=99.4p   VJ=0.5)
+Rpar      b    d2   1Meg
+Dgd       a    d2   DGD
+Rpar2     d2   a    10Meg
+Cgs     g2    s2    55.44p
+
+.ENDS  BSS131_L0

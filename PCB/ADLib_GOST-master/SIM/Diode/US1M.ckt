@@ -1,0 +1,15 @@
+**********************************
+* Copyright:                     *
+*   Thomatronik GmbH, Germany    *
+*   info@thomatronik.de          *
+**********************************
+*   SPICE3
+.subckt US1M 1 2
+ddio 1 2 us1md
+
+.model us1md d is = 6.34002E-007 n = 3.35096 rs = 0.0784793
++ eg = 1.8 xti = 3.99999 tnom = 27
++ cjo = 2.89935E-011 vj = 2.45149 m = 0.7 fc = 0.5
++ tt = 1.66475E-007 bv = 1100 ibv = 50 af = 1 kf = 0
+
+.ends

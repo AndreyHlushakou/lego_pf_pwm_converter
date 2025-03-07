@@ -1,0 +1,28 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (( 'STEP AP214' ),
+    '1' );
+FILE_NAME ('Lego_adapter.STEP',
+    '2025-03-07T07:04:08',
+    ( '' ),
+    ( '' ),
+    'SwSTEP 2.0',
+    'SolidWorks 2020',
+    '' );
+FILE_SCHEMA (( 'AUTOMOTIVE_DESIGN' ));
+ENDSEC;
+
+DATA;
+#1 = PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE ( 'ANY', '', #6, .NOT_KNOWN. ) ;
+#2 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+#3 = PRODUCT_DEFINITION_CONTEXT ( 'detailed design', #2, 'design' ) ;
+#4 = PRODUCT_CONTEXT ( 'NONE', #11, 'mechanical' ) ;
+#5 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #11 ) ;
+#6 = PRODUCT ( 'Lego_adapter', 'Lego_adapter', '', ( #4 ) ) ;
+#7 = PRODUCT_RELATED_PRODUCT_CATEGORY ( 'part', '', ( #6 ) ) ;
+#8 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #2 ) ;
+#9 = PRODUCT_DEFINITION ( 'UNKNOWN', '', #1, #3 ) ;
+#10 = PRODUCT_DEFINITION_SHAPE ( 'NONE', 'NONE',  #9 ) ;
+#11 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+ENDSEC;
+END-ISO-10303-21;

@@ -1,0 +1,1390 @@
+[OutputDatabaseLinkFile]
+Version=1.1
+[DatabaseLinks]
+ConnectionString=Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Andrew\Desktop\ADLib\Lib_GOST.mdb;Persist Security Info=False
+AddMode=3
+RemoveMode=1
+UpdateMode=2
+ViewMode=0
+LeftQuote=[
+RightQuote=]
+QuoteTableNames=1
+UseTableSchemaName=0
+DefaultColumnType=VARCHAR(255)
+LibraryDatabaseType=Microsoft Access
+LibraryDatabasePath=Lib_GOST.mdb
+DatabasePathRelative=1
+TopPanelCollapsed=0
+LibrarySearchPath=.
+OrcadMultiValueDelimiter=,
+SearchSubDirectories=1
+SchemaName=
+LastFocusedTable=Диоды SMT - Общ
+[Table1]
+SchemaName=
+TableName=Диоды SMT - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table2]
+SchemaName=
+TableName=Диоды SMT - Стабилитроны
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table3]
+SchemaName=
+TableName=Диоды SMT - Шотки
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table4]
+SchemaName=
+TableName=Дроссели SMT - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table5]
+SchemaName=
+TableName=Дроссели THM - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table6]
+SchemaName=
+TableName=ЖКИ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table7]
+SchemaName=
+TableName=Кварцевые Резонаторы SMT
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table8]
+SchemaName=
+TableName=Кварцевые Резонаторы THM
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table9]
+SchemaName=
+TableName=Конденсаторы SMT - Керамические
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table10]
+SchemaName=
+TableName=Конденсаторы SMT - Танталовые
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table11]
+SchemaName=
+TableName=МС - CAN
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table12]
+SchemaName=
+TableName=МС - Ethernet
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table13]
+SchemaName=
+TableName=МС - LIN
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table14]
+SchemaName=
+TableName=МС - LVDS
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table15]
+SchemaName=
+TableName=МС - RS-422\RS-485
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table16]
+SchemaName=
+TableName=МС - Компараторы
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table17]
+SchemaName=
+TableName=МС - Микроконтроллеры
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table18]
+SchemaName=
+TableName=МС - Микропроцессоры
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table19]
+SchemaName=
+TableName=МС - Операционные Усилители
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table20]
+SchemaName=
+TableName=МС - Оптопары
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table21]
+SchemaName=
+TableName=МС - ПЛИС
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table22]
+SchemaName=
+TableName=МС - Стабилизаторы Импульсные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table23]
+SchemaName=
+TableName=МС - Стабилизаторы Линейные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table24]
+SchemaName=
+TableName=Переключатели - Кнопочные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table25]
+SchemaName=
+TableName=Переключатели - Фиксированные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table26]
+SchemaName=
+TableName=Предохранители THM
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table27]
+SchemaName=
+TableName=Резисторы SMT - Подстроечные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table28]
+SchemaName=
+TableName=Резисторы SMT - Постоянные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table29]
+SchemaName=
+TableName=Светодиоды SMT - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table30]
+SchemaName=
+TableName=Светодиоды THM - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table31]
+SchemaName=
+TableName=Соединители Электрические - Межплатные
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table32]
+SchemaName=
+TableName=Соединители Электрические - Общ
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table33]
+SchemaName=
+TableName=Транзисторы SMT - BJT
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table34]
+SchemaName=
+TableName=Транзисторы SMT - MOSFET
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table35]
+SchemaName=
+TableName=Транзисторы THM - BJT
+Enabled=True
+UserWhere=0
+UserWhereText=
+[Table36]
+SchemaName=
+TableName=Трансформаторы - Ethernet
+Enabled=True
+UserWhere=0
+UserWhereText=
+[FieldMap1]
+Options=FieldName=Диоды SMT - Общ.Part Number|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap2]
+Options=FieldName=Диоды SMT - Общ.Library Ref|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap3]
+Options=FieldName=Диоды SMT - Общ.Footprint Ref|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap4]
+Options=FieldName=Диоды SMT - Общ.Footprint Ref 2|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap5]
+Options=FieldName=Диоды SMT - Общ.Footprint Ref 3|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap6]
+Options=FieldName=Диоды SMT - Общ.Footprint Ref 4|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap7]
+Options=FieldName=Диоды SMT - Общ.Library Path|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap8]
+Options=FieldName=Диоды SMT - Общ.Footprint Path|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap9]
+Options=FieldName=Диоды SMT - Общ.Sim Model Name|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap10]
+Options=FieldName=Диоды SMT - Общ.Sim File|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap11]
+Options=FieldName=Диоды SMT - Общ.Sim Kind|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap12]
+Options=FieldName=Диоды SMT - Общ.Sim SubKind|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap13]
+Options=FieldName=Диоды SMT - Общ.Sim Spice Prefix|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap14]
+Options=FieldName=Диоды SMT - Общ.Sim Netlist|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap15]
+Options=FieldName=Диоды SMT - Общ.Sim Port Map|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap16]
+Options=FieldName=Диоды SMT - Общ.Sim Parameters|TableNameOnly=Диоды SMT - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap17]
+Options=FieldName=Диоды SMT - Стабилитроны.Part Number|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap18]
+Options=FieldName=Диоды SMT - Стабилитроны.Library Ref|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap19]
+Options=FieldName=Диоды SMT - Стабилитроны.Footprint Ref|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap20]
+Options=FieldName=Диоды SMT - Стабилитроны.Footprint Ref 2|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap21]
+Options=FieldName=Диоды SMT - Стабилитроны.Footprint Ref 3|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap22]
+Options=FieldName=Диоды SMT - Стабилитроны.Footprint Ref 4|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap23]
+Options=FieldName=Диоды SMT - Стабилитроны.Library Path|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap24]
+Options=FieldName=Диоды SMT - Стабилитроны.Footprint Path|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap25]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Model Name|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap26]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim File|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap27]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Kind|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap28]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim SubKind|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap29]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Spice Prefix|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap30]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Netlist|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap31]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Port Map|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap32]
+Options=FieldName=Диоды SMT - Стабилитроны.Sim Parameters|TableNameOnly=Диоды SMT - Стабилитроны|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap33]
+Options=FieldName=Диоды SMT - Шотки.Part Number|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap34]
+Options=FieldName=Диоды SMT - Шотки.Library Ref|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap35]
+Options=FieldName=Диоды SMT - Шотки.Footprint Ref|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap36]
+Options=FieldName=Диоды SMT - Шотки.Footprint Ref 2|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap37]
+Options=FieldName=Диоды SMT - Шотки.Footprint Ref 3|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap38]
+Options=FieldName=Диоды SMT - Шотки.Footprint Ref 4|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap39]
+Options=FieldName=Диоды SMT - Шотки.Library Path|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap40]
+Options=FieldName=Диоды SMT - Шотки.Footprint Path|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap41]
+Options=FieldName=Диоды SMT - Шотки.Sim Model Name|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap42]
+Options=FieldName=Диоды SMT - Шотки.Sim File|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap43]
+Options=FieldName=Диоды SMT - Шотки.Sim Kind|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap44]
+Options=FieldName=Диоды SMT - Шотки.Sim SubKind|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap45]
+Options=FieldName=Диоды SMT - Шотки.Sim Spice Prefix|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap46]
+Options=FieldName=Диоды SMT - Шотки.Sim Netlist|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap47]
+Options=FieldName=Диоды SMT - Шотки.Sim Port Map|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap48]
+Options=FieldName=Диоды SMT - Шотки.Sim Parameters|TableNameOnly=Диоды SMT - Шотки|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap49]
+Options=FieldName=Дроссели SMT - Общ.Part Number|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap50]
+Options=FieldName=Дроссели SMT - Общ.Library Ref|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap51]
+Options=FieldName=Дроссели SMT - Общ.Footprint Ref|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap52]
+Options=FieldName=Дроссели SMT - Общ.Footprint Ref 2|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap53]
+Options=FieldName=Дроссели SMT - Общ.Footprint Ref 3|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap54]
+Options=FieldName=Дроссели SMT - Общ.Footprint Ref 4|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap55]
+Options=FieldName=Дроссели SMT - Общ.Library Path|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap56]
+Options=FieldName=Дроссели SMT - Общ.Footprint Path|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap57]
+Options=FieldName=Дроссели SMT - Общ.Sim Model Name|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap58]
+Options=FieldName=Дроссели SMT - Общ.Sim File|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap59]
+Options=FieldName=Дроссели SMT - Общ.Sim Kind|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap60]
+Options=FieldName=Дроссели SMT - Общ.Sim SubKind|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap61]
+Options=FieldName=Дроссели SMT - Общ.Sim Spice Prefix|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap62]
+Options=FieldName=Дроссели SMT - Общ.Sim Netlist|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap63]
+Options=FieldName=Дроссели SMT - Общ.Sim Port Map|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap64]
+Options=FieldName=Дроссели SMT - Общ.Sim Parameters|TableNameOnly=Дроссели SMT - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap65]
+Options=FieldName=Дроссели THM - Общ.Part Number|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap66]
+Options=FieldName=Дроссели THM - Общ.Library Ref|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap67]
+Options=FieldName=Дроссели THM - Общ.Footprint Ref|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap68]
+Options=FieldName=Дроссели THM - Общ.Footprint Ref 2|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap69]
+Options=FieldName=Дроссели THM - Общ.Footprint Ref 3|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap70]
+Options=FieldName=Дроссели THM - Общ.Footprint Ref 4|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap71]
+Options=FieldName=Дроссели THM - Общ.Library Path|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap72]
+Options=FieldName=Дроссели THM - Общ.Footprint Path|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap73]
+Options=FieldName=Дроссели THM - Общ.Sim Model Name|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap74]
+Options=FieldName=Дроссели THM - Общ.Sim File|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap75]
+Options=FieldName=Дроссели THM - Общ.Sim Kind|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap76]
+Options=FieldName=Дроссели THM - Общ.Sim SubKind|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap77]
+Options=FieldName=Дроссели THM - Общ.Sim Spice Prefix|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap78]
+Options=FieldName=Дроссели THM - Общ.Sim Netlist|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap79]
+Options=FieldName=Дроссели THM - Общ.Sim Port Map|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap80]
+Options=FieldName=Дроссели THM - Общ.Sim Parameters|TableNameOnly=Дроссели THM - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap81]
+Options=FieldName=ЖКИ.Part Number|TableNameOnly=ЖКИ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap82]
+Options=FieldName=ЖКИ.Library Ref|TableNameOnly=ЖКИ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap83]
+Options=FieldName=ЖКИ.Footprint Ref|TableNameOnly=ЖКИ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap84]
+Options=FieldName=ЖКИ.Footprint Ref 2|TableNameOnly=ЖКИ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap85]
+Options=FieldName=ЖКИ.Footprint Ref 3|TableNameOnly=ЖКИ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap86]
+Options=FieldName=ЖКИ.Footprint Ref 4|TableNameOnly=ЖКИ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap87]
+Options=FieldName=ЖКИ.Library Path|TableNameOnly=ЖКИ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap88]
+Options=FieldName=ЖКИ.Footprint Path|TableNameOnly=ЖКИ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap89]
+Options=FieldName=ЖКИ.Sim Model Name|TableNameOnly=ЖКИ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap90]
+Options=FieldName=ЖКИ.Sim File|TableNameOnly=ЖКИ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap91]
+Options=FieldName=ЖКИ.Sim Kind|TableNameOnly=ЖКИ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap92]
+Options=FieldName=ЖКИ.Sim SubKind|TableNameOnly=ЖКИ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap93]
+Options=FieldName=ЖКИ.Sim Spice Prefix|TableNameOnly=ЖКИ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap94]
+Options=FieldName=ЖКИ.Sim Netlist|TableNameOnly=ЖКИ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap95]
+Options=FieldName=ЖКИ.Sim Port Map|TableNameOnly=ЖКИ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap96]
+Options=FieldName=ЖКИ.Sim Parameters|TableNameOnly=ЖКИ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap97]
+Options=FieldName=Кварцевые Резонаторы SMT.Part Number|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap98]
+Options=FieldName=Кварцевые Резонаторы SMT.Library Ref|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap99]
+Options=FieldName=Кварцевые Резонаторы SMT.Footprint Ref|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap100]
+Options=FieldName=Кварцевые Резонаторы SMT.Footprint Ref 2|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap101]
+Options=FieldName=Кварцевые Резонаторы SMT.Footprint Ref 3|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap102]
+Options=FieldName=Кварцевые Резонаторы SMT.Footprint Ref 4|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap103]
+Options=FieldName=Кварцевые Резонаторы SMT.Library Path|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap104]
+Options=FieldName=Кварцевые Резонаторы SMT.Footprint Path|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap105]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Model Name|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap106]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim File|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap107]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Kind|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap108]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim SubKind|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap109]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Spice Prefix|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap110]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Netlist|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap111]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Port Map|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap112]
+Options=FieldName=Кварцевые Резонаторы SMT.Sim Parameters|TableNameOnly=Кварцевые Резонаторы SMT|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap113]
+Options=FieldName=Кварцевые Резонаторы THM.Part Number|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap114]
+Options=FieldName=Кварцевые Резонаторы THM.Library Ref|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap115]
+Options=FieldName=Кварцевые Резонаторы THM.Footprint Ref|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap116]
+Options=FieldName=Кварцевые Резонаторы THM.Footprint Ref 2|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap117]
+Options=FieldName=Кварцевые Резонаторы THM.Footprint Ref 3|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap118]
+Options=FieldName=Кварцевые Резонаторы THM.Footprint Ref 4|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap119]
+Options=FieldName=Кварцевые Резонаторы THM.Library Path|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap120]
+Options=FieldName=Кварцевые Резонаторы THM.Footprint Path|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap121]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Model Name|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap122]
+Options=FieldName=Кварцевые Резонаторы THM.Sim File|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap123]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Kind|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap124]
+Options=FieldName=Кварцевые Резонаторы THM.Sim SubKind|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap125]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Spice Prefix|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap126]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Netlist|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap127]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Port Map|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap128]
+Options=FieldName=Кварцевые Резонаторы THM.Sim Parameters|TableNameOnly=Кварцевые Резонаторы THM|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap129]
+Options=FieldName=Конденсаторы SMT - Керамические.Part Number|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap130]
+Options=FieldName=Конденсаторы SMT - Керамические.Library Ref|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap131]
+Options=FieldName=Конденсаторы SMT - Керамические.Footprint Ref|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap132]
+Options=FieldName=Конденсаторы SMT - Керамические.Footprint Ref 2|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap133]
+Options=FieldName=Конденсаторы SMT - Керамические.Footprint Ref 3|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap134]
+Options=FieldName=Конденсаторы SMT - Керамические.Footprint Ref 4|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap135]
+Options=FieldName=Конденсаторы SMT - Керамические.Library Path|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap136]
+Options=FieldName=Конденсаторы SMT - Керамические.Footprint Path|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap137]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Model Name|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap138]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim File|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap139]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Kind|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap140]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim SubKind|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap141]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Spice Prefix|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap142]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Netlist|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap143]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Port Map|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap144]
+Options=FieldName=Конденсаторы SMT - Керамические.Sim Parameters|TableNameOnly=Конденсаторы SMT - Керамические|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap145]
+Options=FieldName=Конденсаторы SMT - Танталовые.Part Number|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap146]
+Options=FieldName=Конденсаторы SMT - Танталовые.Library Ref|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap147]
+Options=FieldName=Конденсаторы SMT - Танталовые.Footprint Ref|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap148]
+Options=FieldName=Конденсаторы SMT - Танталовые.Footprint Ref 2|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap149]
+Options=FieldName=Конденсаторы SMT - Танталовые.Footprint Ref 3|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap150]
+Options=FieldName=Конденсаторы SMT - Танталовые.Footprint Ref 4|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap151]
+Options=FieldName=Конденсаторы SMT - Танталовые.Library Path|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap152]
+Options=FieldName=Конденсаторы SMT - Танталовые.Footprint Path|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap153]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Model Name|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap154]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim File|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap155]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Kind|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap156]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim SubKind|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap157]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Spice Prefix|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap158]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Netlist|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap159]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Port Map|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap160]
+Options=FieldName=Конденсаторы SMT - Танталовые.Sim Parameters|TableNameOnly=Конденсаторы SMT - Танталовые|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap161]
+Options=FieldName=МС - CAN.Part Number|TableNameOnly=МС - CAN|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap162]
+Options=FieldName=МС - CAN.Library Ref|TableNameOnly=МС - CAN|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap163]
+Options=FieldName=МС - CAN.Footprint Ref|TableNameOnly=МС - CAN|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap164]
+Options=FieldName=МС - CAN.Footprint Ref 2|TableNameOnly=МС - CAN|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap165]
+Options=FieldName=МС - CAN.Footprint Ref 3|TableNameOnly=МС - CAN|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap166]
+Options=FieldName=МС - CAN.Footprint Ref 4|TableNameOnly=МС - CAN|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap167]
+Options=FieldName=МС - CAN.Library Path|TableNameOnly=МС - CAN|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap168]
+Options=FieldName=МС - CAN.Footprint Path|TableNameOnly=МС - CAN|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap169]
+Options=FieldName=МС - CAN.Sim Model Name|TableNameOnly=МС - CAN|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap170]
+Options=FieldName=МС - CAN.Sim File|TableNameOnly=МС - CAN|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap171]
+Options=FieldName=МС - CAN.Sim Kind|TableNameOnly=МС - CAN|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap172]
+Options=FieldName=МС - CAN.Sim SubKind|TableNameOnly=МС - CAN|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap173]
+Options=FieldName=МС - CAN.Sim Spice Prefix|TableNameOnly=МС - CAN|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap174]
+Options=FieldName=МС - CAN.Sim Netlist|TableNameOnly=МС - CAN|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap175]
+Options=FieldName=МС - CAN.Sim Port Map|TableNameOnly=МС - CAN|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap176]
+Options=FieldName=МС - CAN.Sim Parameters|TableNameOnly=МС - CAN|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap177]
+Options=FieldName=МС - Ethernet.Part Number|TableNameOnly=МС - Ethernet|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap178]
+Options=FieldName=МС - Ethernet.Library Ref|TableNameOnly=МС - Ethernet|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap179]
+Options=FieldName=МС - Ethernet.Footprint Ref|TableNameOnly=МС - Ethernet|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap180]
+Options=FieldName=МС - Ethernet.Footprint Ref 2|TableNameOnly=МС - Ethernet|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap181]
+Options=FieldName=МС - Ethernet.Footprint Ref 3|TableNameOnly=МС - Ethernet|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap182]
+Options=FieldName=МС - Ethernet.Footprint Ref 4|TableNameOnly=МС - Ethernet|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap183]
+Options=FieldName=МС - Ethernet.Library Path|TableNameOnly=МС - Ethernet|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap184]
+Options=FieldName=МС - Ethernet.Footprint Path|TableNameOnly=МС - Ethernet|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap185]
+Options=FieldName=МС - Ethernet.Sim Model Name|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap186]
+Options=FieldName=МС - Ethernet.Sim File|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap187]
+Options=FieldName=МС - Ethernet.Sim Kind|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap188]
+Options=FieldName=МС - Ethernet.Sim SubKind|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap189]
+Options=FieldName=МС - Ethernet.Sim Spice Prefix|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap190]
+Options=FieldName=МС - Ethernet.Sim Netlist|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap191]
+Options=FieldName=МС - Ethernet.Sim Port Map|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap192]
+Options=FieldName=МС - Ethernet.Sim Parameters|TableNameOnly=МС - Ethernet|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap193]
+Options=FieldName=МС - LIN.Part Number|TableNameOnly=МС - LIN|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap194]
+Options=FieldName=МС - LIN.Library Ref|TableNameOnly=МС - LIN|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap195]
+Options=FieldName=МС - LIN.Footprint Ref|TableNameOnly=МС - LIN|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap196]
+Options=FieldName=МС - LIN.Footprint Ref 2|TableNameOnly=МС - LIN|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap197]
+Options=FieldName=МС - LIN.Footprint Ref 3|TableNameOnly=МС - LIN|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap198]
+Options=FieldName=МС - LIN.Footprint Ref 4|TableNameOnly=МС - LIN|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap199]
+Options=FieldName=МС - LIN.Library Path|TableNameOnly=МС - LIN|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap200]
+Options=FieldName=МС - LIN.Footprint Path|TableNameOnly=МС - LIN|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap201]
+Options=FieldName=МС - LIN.Sim Model Name|TableNameOnly=МС - LIN|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap202]
+Options=FieldName=МС - LIN.Sim File|TableNameOnly=МС - LIN|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap203]
+Options=FieldName=МС - LIN.Sim Kind|TableNameOnly=МС - LIN|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap204]
+Options=FieldName=МС - LIN.Sim SubKind|TableNameOnly=МС - LIN|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap205]
+Options=FieldName=МС - LIN.Sim Spice Prefix|TableNameOnly=МС - LIN|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap206]
+Options=FieldName=МС - LIN.Sim Netlist|TableNameOnly=МС - LIN|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap207]
+Options=FieldName=МС - LIN.Sim Port Map|TableNameOnly=МС - LIN|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap208]
+Options=FieldName=МС - LIN.Sim Parameters|TableNameOnly=МС - LIN|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap209]
+Options=FieldName=МС - LVDS.Part Number|TableNameOnly=МС - LVDS|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap210]
+Options=FieldName=МС - LVDS.Library Ref|TableNameOnly=МС - LVDS|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap211]
+Options=FieldName=МС - LVDS.Footprint Ref|TableNameOnly=МС - LVDS|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap212]
+Options=FieldName=МС - LVDS.Footprint Ref 2|TableNameOnly=МС - LVDS|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap213]
+Options=FieldName=МС - LVDS.Footprint Ref 3|TableNameOnly=МС - LVDS|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap214]
+Options=FieldName=МС - LVDS.Footprint Ref 4|TableNameOnly=МС - LVDS|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap215]
+Options=FieldName=МС - LVDS.Library Path|TableNameOnly=МС - LVDS|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap216]
+Options=FieldName=МС - LVDS.Footprint Path|TableNameOnly=МС - LVDS|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap217]
+Options=FieldName=МС - LVDS.Sim Model Name|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap218]
+Options=FieldName=МС - LVDS.Sim File|TableNameOnly=МС - LVDS|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap219]
+Options=FieldName=МС - LVDS.Sim Kind|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap220]
+Options=FieldName=МС - LVDS.Sim SubKind|TableNameOnly=МС - LVDS|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap221]
+Options=FieldName=МС - LVDS.Sim Spice Prefix|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap222]
+Options=FieldName=МС - LVDS.Sim Netlist|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap223]
+Options=FieldName=МС - LVDS.Sim Port Map|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap224]
+Options=FieldName=МС - LVDS.Sim Parameters|TableNameOnly=МС - LVDS|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap225]
+Options=FieldName=МС - RS-422\RS-485.Part Number|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap226]
+Options=FieldName=МС - RS-422\RS-485.Library Ref|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap227]
+Options=FieldName=МС - RS-422\RS-485.Footprint Ref|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap228]
+Options=FieldName=МС - RS-422\RS-485.Footprint Ref 2|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap229]
+Options=FieldName=МС - RS-422\RS-485.Footprint Ref 3|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap230]
+Options=FieldName=МС - RS-422\RS-485.Footprint Ref 4|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap231]
+Options=FieldName=МС - RS-422\RS-485.Library Path|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap232]
+Options=FieldName=МС - RS-422\RS-485.Footprint Path|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap233]
+Options=FieldName=МС - RS-422\RS-485.Sim Model Name|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap234]
+Options=FieldName=МС - RS-422\RS-485.Sim File|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap235]
+Options=FieldName=МС - RS-422\RS-485.Sim Kind|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap236]
+Options=FieldName=МС - RS-422\RS-485.Sim SubKind|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap237]
+Options=FieldName=МС - RS-422\RS-485.Sim Spice Prefix|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap238]
+Options=FieldName=МС - RS-422\RS-485.Sim Netlist|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap239]
+Options=FieldName=МС - RS-422\RS-485.Sim Port Map|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap240]
+Options=FieldName=МС - RS-422\RS-485.Sim Parameters|TableNameOnly=МС - RS-422\RS-485|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap241]
+Options=FieldName=МС - Компараторы.Part Number|TableNameOnly=МС - Компараторы|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap242]
+Options=FieldName=МС - Компараторы.Library Ref|TableNameOnly=МС - Компараторы|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap243]
+Options=FieldName=МС - Компараторы.Footprint Ref|TableNameOnly=МС - Компараторы|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap244]
+Options=FieldName=МС - Компараторы.Footprint Ref 2|TableNameOnly=МС - Компараторы|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap245]
+Options=FieldName=МС - Компараторы.Footprint Ref 3|TableNameOnly=МС - Компараторы|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap246]
+Options=FieldName=МС - Компараторы.Footprint Ref 4|TableNameOnly=МС - Компараторы|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap247]
+Options=FieldName=МС - Компараторы.Library Path|TableNameOnly=МС - Компараторы|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap248]
+Options=FieldName=МС - Компараторы.Footprint Path|TableNameOnly=МС - Компараторы|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap249]
+Options=FieldName=МС - Компараторы.Sim Model Name|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap250]
+Options=FieldName=МС - Компараторы.Sim File|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap251]
+Options=FieldName=МС - Компараторы.Sim Kind|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap252]
+Options=FieldName=МС - Компараторы.Sim SubKind|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap253]
+Options=FieldName=МС - Компараторы.Sim Spice Prefix|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap254]
+Options=FieldName=МС - Компараторы.Sim Netlist|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap255]
+Options=FieldName=МС - Компараторы.Sim Port Map|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap256]
+Options=FieldName=МС - Компараторы.Sim Parameters|TableNameOnly=МС - Компараторы|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap257]
+Options=FieldName=МС - Микроконтроллеры.Part Number|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap258]
+Options=FieldName=МС - Микроконтроллеры.Library Ref|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap259]
+Options=FieldName=МС - Микроконтроллеры.Footprint Ref|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap260]
+Options=FieldName=МС - Микроконтроллеры.Footprint Ref 2|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap261]
+Options=FieldName=МС - Микроконтроллеры.Footprint Ref 3|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap262]
+Options=FieldName=МС - Микроконтроллеры.Footprint Ref 4|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap263]
+Options=FieldName=МС - Микроконтроллеры.Library Path|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap264]
+Options=FieldName=МС - Микроконтроллеры.Footprint Path|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap265]
+Options=FieldName=МС - Микроконтроллеры.Sim Model Name|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap266]
+Options=FieldName=МС - Микроконтроллеры.Sim File|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap267]
+Options=FieldName=МС - Микроконтроллеры.Sim Kind|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap268]
+Options=FieldName=МС - Микроконтроллеры.Sim SubKind|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap269]
+Options=FieldName=МС - Микроконтроллеры.Sim Spice Prefix|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap270]
+Options=FieldName=МС - Микроконтроллеры.Sim Netlist|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap271]
+Options=FieldName=МС - Микроконтроллеры.Sim Port Map|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap272]
+Options=FieldName=МС - Микроконтроллеры.Sim Parameters|TableNameOnly=МС - Микроконтроллеры|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap273]
+Options=FieldName=МС - Микропроцессоры.Part Number|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap274]
+Options=FieldName=МС - Микропроцессоры.Library Ref|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap275]
+Options=FieldName=МС - Микропроцессоры.Footprint Ref|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap276]
+Options=FieldName=МС - Микропроцессоры.Footprint Ref 2|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap277]
+Options=FieldName=МС - Микропроцессоры.Footprint Ref 3|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap278]
+Options=FieldName=МС - Микропроцессоры.Footprint Ref 4|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap279]
+Options=FieldName=МС - Микропроцессоры.Library Path|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap280]
+Options=FieldName=МС - Микропроцессоры.Footprint Path|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap281]
+Options=FieldName=МС - Микропроцессоры.Sim Model Name|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap282]
+Options=FieldName=МС - Микропроцессоры.Sim File|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap283]
+Options=FieldName=МС - Микропроцессоры.Sim Kind|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap284]
+Options=FieldName=МС - Микропроцессоры.Sim SubKind|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap285]
+Options=FieldName=МС - Микропроцессоры.Sim Spice Prefix|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap286]
+Options=FieldName=МС - Микропроцессоры.Sim Netlist|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap287]
+Options=FieldName=МС - Микропроцессоры.Sim Port Map|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap288]
+Options=FieldName=МС - Микропроцессоры.Sim Parameters|TableNameOnly=МС - Микропроцессоры|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap289]
+Options=FieldName=МС - Операционные Усилители.Library Ref|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap290]
+Options=FieldName=МС - Операционные Усилители.Footprint Ref|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap291]
+Options=FieldName=МС - Операционные Усилители.Library Path|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap292]
+Options=FieldName=МС - Операционные Усилители.Footprint Path|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap293]
+Options=FieldName=МС - Операционные Усилители.Part Number|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap294]
+Options=FieldName=МС - Операционные Усилители.Sim Model Name|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap295]
+Options=FieldName=МС - Операционные Усилители.Sim File|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap296]
+Options=FieldName=МС - Операционные Усилители.Footprint Ref 2|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap297]
+Options=FieldName=МС - Операционные Усилители.Footprint Ref 3|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap298]
+Options=FieldName=МС - Операционные Усилители.Footprint Ref 4|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap299]
+Options=FieldName=МС - Операционные Усилители.Sim Kind|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap300]
+Options=FieldName=МС - Операционные Усилители.Sim SubKind|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap301]
+Options=FieldName=МС - Операционные Усилители.Sim Spice Prefix|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap302]
+Options=FieldName=МС - Операционные Усилители.Sim Netlist|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap303]
+Options=FieldName=МС - Операционные Усилители.Sim Port Map|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap304]
+Options=FieldName=МС - Операционные Усилители.Sim Parameters|TableNameOnly=МС - Операционные Усилители|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap305]
+Options=FieldName=МС - Оптопары.Part Number|TableNameOnly=МС - Оптопары|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap306]
+Options=FieldName=МС - Оптопары.Library Ref|TableNameOnly=МС - Оптопары|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap307]
+Options=FieldName=МС - Оптопары.Footprint Ref|TableNameOnly=МС - Оптопары|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap308]
+Options=FieldName=МС - Оптопары.Footprint Ref 2|TableNameOnly=МС - Оптопары|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap309]
+Options=FieldName=МС - Оптопары.Footprint Ref 3|TableNameOnly=МС - Оптопары|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap310]
+Options=FieldName=МС - Оптопары.Footprint Ref 4|TableNameOnly=МС - Оптопары|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap311]
+Options=FieldName=МС - Оптопары.Library Path|TableNameOnly=МС - Оптопары|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap312]
+Options=FieldName=МС - Оптопары.Footprint Path|TableNameOnly=МС - Оптопары|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap313]
+Options=FieldName=МС - Оптопары.Sim Model Name|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap314]
+Options=FieldName=МС - Оптопары.Sim File|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap315]
+Options=FieldName=МС - Оптопары.Sim Kind|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap316]
+Options=FieldName=МС - Оптопары.Sim SubKind|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap317]
+Options=FieldName=МС - Оптопары.Sim Spice Prefix|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap318]
+Options=FieldName=МС - Оптопары.Sim Netlist|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap319]
+Options=FieldName=МС - Оптопары.Sim Port Map|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap320]
+Options=FieldName=МС - Оптопары.Sim Parameters|TableNameOnly=МС - Оптопары|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap321]
+Options=FieldName=МС - ПЛИС.Part Number|TableNameOnly=МС - ПЛИС|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap322]
+Options=FieldName=МС - ПЛИС.Library Ref|TableNameOnly=МС - ПЛИС|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap323]
+Options=FieldName=МС - ПЛИС.Footprint Ref|TableNameOnly=МС - ПЛИС|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap324]
+Options=FieldName=МС - ПЛИС.Footprint Ref 2|TableNameOnly=МС - ПЛИС|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap325]
+Options=FieldName=МС - ПЛИС.Footprint Ref 3|TableNameOnly=МС - ПЛИС|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap326]
+Options=FieldName=МС - ПЛИС.Footprint Ref 4|TableNameOnly=МС - ПЛИС|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap327]
+Options=FieldName=МС - ПЛИС.Library Path|TableNameOnly=МС - ПЛИС|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap328]
+Options=FieldName=МС - ПЛИС.Footprint Path|TableNameOnly=МС - ПЛИС|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap329]
+Options=FieldName=МС - ПЛИС.Sim Model Name|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap330]
+Options=FieldName=МС - ПЛИС.Sim File|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap331]
+Options=FieldName=МС - ПЛИС.Sim Kind|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap332]
+Options=FieldName=МС - ПЛИС.Sim SubKind|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap333]
+Options=FieldName=МС - ПЛИС.Sim Spice Prefix|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap334]
+Options=FieldName=МС - ПЛИС.Sim Netlist|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap335]
+Options=FieldName=МС - ПЛИС.Sim Port Map|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap336]
+Options=FieldName=МС - ПЛИС.Sim Parameters|TableNameOnly=МС - ПЛИС|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap337]
+Options=FieldName=МС - Стабилизаторы Импульсные.Part Number|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap338]
+Options=FieldName=МС - Стабилизаторы Импульсные.Library Ref|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap339]
+Options=FieldName=МС - Стабилизаторы Импульсные.Footprint Ref|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap340]
+Options=FieldName=МС - Стабилизаторы Импульсные.Footprint Ref 2|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap341]
+Options=FieldName=МС - Стабилизаторы Импульсные.Footprint Ref 3|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap342]
+Options=FieldName=МС - Стабилизаторы Импульсные.Footprint Ref 4|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap343]
+Options=FieldName=МС - Стабилизаторы Импульсные.Library Path|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap344]
+Options=FieldName=МС - Стабилизаторы Импульсные.Footprint Path|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap345]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Model Name|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap346]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim File|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap347]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Kind|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap348]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim SubKind|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap349]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Spice Prefix|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap350]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Netlist|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap351]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Port Map|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap352]
+Options=FieldName=МС - Стабилизаторы Импульсные.Sim Parameters|TableNameOnly=МС - Стабилизаторы Импульсные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap353]
+Options=FieldName=МС - Стабилизаторы Линейные.Part Number|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap354]
+Options=FieldName=МС - Стабилизаторы Линейные.Library Ref|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap355]
+Options=FieldName=МС - Стабилизаторы Линейные.Footprint Ref|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap356]
+Options=FieldName=МС - Стабилизаторы Линейные.Footprint Ref 2|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap357]
+Options=FieldName=МС - Стабилизаторы Линейные.Footprint Ref 3|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap358]
+Options=FieldName=МС - Стабилизаторы Линейные.Footprint Ref 4|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap359]
+Options=FieldName=МС - Стабилизаторы Линейные.Library Path|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap360]
+Options=FieldName=МС - Стабилизаторы Линейные.Footprint Path|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap361]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Model Name|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap362]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim File|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap363]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Kind|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap364]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim SubKind|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap365]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Spice Prefix|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap366]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Netlist|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap367]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Port Map|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap368]
+Options=FieldName=МС - Стабилизаторы Линейные.Sim Parameters|TableNameOnly=МС - Стабилизаторы Линейные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap369]
+Options=FieldName=Переключатели - Кнопочные.Part Number|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap370]
+Options=FieldName=Переключатели - Кнопочные.Library Ref|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap371]
+Options=FieldName=Переключатели - Кнопочные.Footprint Ref|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap372]
+Options=FieldName=Переключатели - Кнопочные.Footprint Ref 2|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap373]
+Options=FieldName=Переключатели - Кнопочные.Footprint Ref 3|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap374]
+Options=FieldName=Переключатели - Кнопочные.Footprint Ref 4|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap375]
+Options=FieldName=Переключатели - Кнопочные.Library Path|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap376]
+Options=FieldName=Переключатели - Кнопочные.Footprint Path|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap377]
+Options=FieldName=Переключатели - Кнопочные.Sim Model Name|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap378]
+Options=FieldName=Переключатели - Кнопочные.Sim File|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap379]
+Options=FieldName=Переключатели - Кнопочные.Sim Kind|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap380]
+Options=FieldName=Переключатели - Кнопочные.Sim SubKind|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap381]
+Options=FieldName=Переключатели - Кнопочные.Sim Spice Prefix|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap382]
+Options=FieldName=Переключатели - Кнопочные.Sim Netlist|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap383]
+Options=FieldName=Переключатели - Кнопочные.Sim Port Map|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap384]
+Options=FieldName=Переключатели - Кнопочные.Sim Parameters|TableNameOnly=Переключатели - Кнопочные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap385]
+Options=FieldName=Переключатели - Фиксированные.Part Number|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap386]
+Options=FieldName=Переключатели - Фиксированные.Library Ref|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap387]
+Options=FieldName=Переключатели - Фиксированные.Footprint Ref|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap388]
+Options=FieldName=Переключатели - Фиксированные.Footprint Ref 2|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap389]
+Options=FieldName=Переключатели - Фиксированные.Footprint Ref 3|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap390]
+Options=FieldName=Переключатели - Фиксированные.Footprint Ref 4|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap391]
+Options=FieldName=Переключатели - Фиксированные.Library Path|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap392]
+Options=FieldName=Переключатели - Фиксированные.Footprint Path|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap393]
+Options=FieldName=Переключатели - Фиксированные.Sim Model Name|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap394]
+Options=FieldName=Переключатели - Фиксированные.Sim File|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap395]
+Options=FieldName=Переключатели - Фиксированные.Sim Kind|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap396]
+Options=FieldName=Переключатели - Фиксированные.Sim SubKind|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap397]
+Options=FieldName=Переключатели - Фиксированные.Sim Spice Prefix|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap398]
+Options=FieldName=Переключатели - Фиксированные.Sim Netlist|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap399]
+Options=FieldName=Переключатели - Фиксированные.Sim Port Map|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap400]
+Options=FieldName=Переключатели - Фиксированные.Sim Parameters|TableNameOnly=Переключатели - Фиксированные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap401]
+Options=FieldName=Предохранители THM.Part Number|TableNameOnly=Предохранители THM|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap402]
+Options=FieldName=Предохранители THM.Library Ref|TableNameOnly=Предохранители THM|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap403]
+Options=FieldName=Предохранители THM.Footprint Ref|TableNameOnly=Предохранители THM|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap404]
+Options=FieldName=Предохранители THM.Footprint Ref 2|TableNameOnly=Предохранители THM|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap405]
+Options=FieldName=Предохранители THM.Footprint Ref 3|TableNameOnly=Предохранители THM|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap406]
+Options=FieldName=Предохранители THM.Footprint Ref 4|TableNameOnly=Предохранители THM|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap407]
+Options=FieldName=Предохранители THM.Library Path|TableNameOnly=Предохранители THM|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap408]
+Options=FieldName=Предохранители THM.Footprint Path|TableNameOnly=Предохранители THM|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap409]
+Options=FieldName=Предохранители THM.Sim Model Name|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap410]
+Options=FieldName=Предохранители THM.Sim File|TableNameOnly=Предохранители THM|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap411]
+Options=FieldName=Предохранители THM.Sim Kind|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap412]
+Options=FieldName=Предохранители THM.Sim SubKind|TableNameOnly=Предохранители THM|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap413]
+Options=FieldName=Предохранители THM.Sim Spice Prefix|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap414]
+Options=FieldName=Предохранители THM.Sim Netlist|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap415]
+Options=FieldName=Предохранители THM.Sim Port Map|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap416]
+Options=FieldName=Предохранители THM.Sim Parameters|TableNameOnly=Предохранители THM|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap417]
+Options=FieldName=Резисторы SMT - Подстроечные.Part Number|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap418]
+Options=FieldName=Резисторы SMT - Подстроечные.Library Ref|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap419]
+Options=FieldName=Резисторы SMT - Подстроечные.Footprint Ref|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap420]
+Options=FieldName=Резисторы SMT - Подстроечные.Footprint Ref 2|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap421]
+Options=FieldName=Резисторы SMT - Подстроечные.Footprint Ref 3|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap422]
+Options=FieldName=Резисторы SMT - Подстроечные.Footprint Ref 4|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap423]
+Options=FieldName=Резисторы SMT - Подстроечные.Library Path|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap424]
+Options=FieldName=Резисторы SMT - Подстроечные.Footprint Path|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap425]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Model Name|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap426]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim File|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap427]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Kind|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap428]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim SubKind|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap429]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Spice Prefix|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap430]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Netlist|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap431]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Port Map|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap432]
+Options=FieldName=Резисторы SMT - Подстроечные.Sim Parameters|TableNameOnly=Резисторы SMT - Подстроечные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap433]
+Options=FieldName=Резисторы SMT - Постоянные.Part Number|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap434]
+Options=FieldName=Резисторы SMT - Постоянные.Library Ref|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap435]
+Options=FieldName=Резисторы SMT - Постоянные.Footprint Ref|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap436]
+Options=FieldName=Резисторы SMT - Постоянные.Footprint Ref 2|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap437]
+Options=FieldName=Резисторы SMT - Постоянные.Footprint Ref 3|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap438]
+Options=FieldName=Резисторы SMT - Постоянные.Footprint Ref 4|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap439]
+Options=FieldName=Резисторы SMT - Постоянные.Library Path|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap440]
+Options=FieldName=Резисторы SMT - Постоянные.Footprint Path|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap441]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Model Name|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap442]
+Options=FieldName=Резисторы SMT - Постоянные.Sim File|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap443]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Kind|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap444]
+Options=FieldName=Резисторы SMT - Постоянные.Sim SubKind|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap445]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Spice Prefix|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap446]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Netlist|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap447]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Port Map|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap448]
+Options=FieldName=Резисторы SMT - Постоянные.Sim Parameters|TableNameOnly=Резисторы SMT - Постоянные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap449]
+Options=FieldName=Светодиоды SMT - Общ.Part Number|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap450]
+Options=FieldName=Светодиоды SMT - Общ.Library Ref|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap451]
+Options=FieldName=Светодиоды SMT - Общ.Footprint Ref|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap452]
+Options=FieldName=Светодиоды SMT - Общ.Footprint Ref 2|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap453]
+Options=FieldName=Светодиоды SMT - Общ.Footprint Ref 3|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap454]
+Options=FieldName=Светодиоды SMT - Общ.Footprint Ref 4|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap455]
+Options=FieldName=Светодиоды SMT - Общ.Library Path|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap456]
+Options=FieldName=Светодиоды SMT - Общ.Footprint Path|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap457]
+Options=FieldName=Светодиоды SMT - Общ.Sim Model Name|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap458]
+Options=FieldName=Светодиоды SMT - Общ.Sim File|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap459]
+Options=FieldName=Светодиоды SMT - Общ.Sim Kind|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap460]
+Options=FieldName=Светодиоды SMT - Общ.Sim SubKind|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap461]
+Options=FieldName=Светодиоды SMT - Общ.Sim Spice Prefix|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap462]
+Options=FieldName=Светодиоды SMT - Общ.Sim Netlist|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap463]
+Options=FieldName=Светодиоды SMT - Общ.Sim Port Map|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap464]
+Options=FieldName=Светодиоды SMT - Общ.Sim Parameters|TableNameOnly=Светодиоды SMT - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap465]
+Options=FieldName=Светодиоды THM - Общ.Part Number|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap466]
+Options=FieldName=Светодиоды THM - Общ.Library Ref|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap467]
+Options=FieldName=Светодиоды THM - Общ.Footprint Ref|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap468]
+Options=FieldName=Светодиоды THM - Общ.Footprint Ref 2|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap469]
+Options=FieldName=Светодиоды THM - Общ.Footprint Ref 3|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap470]
+Options=FieldName=Светодиоды THM - Общ.Footprint Ref 4|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap471]
+Options=FieldName=Светодиоды THM - Общ.Library Path|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap472]
+Options=FieldName=Светодиоды THM - Общ.Footprint Path|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap473]
+Options=FieldName=Светодиоды THM - Общ.Sim Model Name|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap474]
+Options=FieldName=Светодиоды THM - Общ.Sim File|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap475]
+Options=FieldName=Светодиоды THM - Общ.Sim Kind|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap476]
+Options=FieldName=Светодиоды THM - Общ.Sim SubKind|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap477]
+Options=FieldName=Светодиоды THM - Общ.Sim Spice Prefix|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap478]
+Options=FieldName=Светодиоды THM - Общ.Sim Netlist|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap479]
+Options=FieldName=Светодиоды THM - Общ.Sim Port Map|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap480]
+Options=FieldName=Светодиоды THM - Общ.Sim Parameters|TableNameOnly=Светодиоды THM - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap481]
+Options=FieldName=Соединители Электрические - Межплатные.Part Number|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap482]
+Options=FieldName=Соединители Электрические - Межплатные.Library Ref|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap483]
+Options=FieldName=Соединители Электрические - Межплатные.Footprint Ref|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap484]
+Options=FieldName=Соединители Электрические - Межплатные.Footprint Ref 2|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap485]
+Options=FieldName=Соединители Электрические - Межплатные.Footprint Ref 3|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap486]
+Options=FieldName=Соединители Электрические - Межплатные.Footprint Ref 4|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap487]
+Options=FieldName=Соединители Электрические - Межплатные.Library Path|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap488]
+Options=FieldName=Соединители Электрические - Межплатные.Footprint Path|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap489]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Model Name|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap490]
+Options=FieldName=Соединители Электрические - Межплатные.Sim File|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap491]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Kind|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap492]
+Options=FieldName=Соединители Электрические - Межплатные.Sim SubKind|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap493]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Spice Prefix|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap494]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Netlist|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap495]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Port Map|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap496]
+Options=FieldName=Соединители Электрические - Межплатные.Sim Parameters|TableNameOnly=Соединители Электрические - Межплатные|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap497]
+Options=FieldName=Соединители Электрические - Общ.Part Number|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap498]
+Options=FieldName=Соединители Электрические - Общ.Library Ref|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap499]
+Options=FieldName=Соединители Электрические - Общ.Footprint Ref|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap500]
+Options=FieldName=Соединители Электрические - Общ.Footprint Ref 2|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap501]
+Options=FieldName=Соединители Электрические - Общ.Footprint Ref 3|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap502]
+Options=FieldName=Соединители Электрические - Общ.Footprint Ref 4|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap503]
+Options=FieldName=Соединители Электрические - Общ.Library Path|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap504]
+Options=FieldName=Соединители Электрические - Общ.Footprint Path|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap505]
+Options=FieldName=Соединители Электрические - Общ.Sim Model Name|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap506]
+Options=FieldName=Соединители Электрические - Общ.Sim File|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap507]
+Options=FieldName=Соединители Электрические - Общ.Sim Kind|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap508]
+Options=FieldName=Соединители Электрические - Общ.Sim SubKind|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap509]
+Options=FieldName=Соединители Электрические - Общ.Sim Spice Prefix|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap510]
+Options=FieldName=Соединители Электрические - Общ.Sim Netlist|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap511]
+Options=FieldName=Соединители Электрические - Общ.Sim Port Map|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap512]
+Options=FieldName=Соединители Электрические - Общ.Sim Parameters|TableNameOnly=Соединители Электрические - Общ|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap513]
+Options=FieldName=Транзисторы SMT - BJT.Part Number|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap514]
+Options=FieldName=Транзисторы SMT - BJT.Library Ref|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap515]
+Options=FieldName=Транзисторы SMT - BJT.Footprint Ref|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap516]
+Options=FieldName=Транзисторы SMT - BJT.Footprint Ref 2|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap517]
+Options=FieldName=Транзисторы SMT - BJT.Footprint Ref 3|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap518]
+Options=FieldName=Транзисторы SMT - BJT.Footprint Ref 4|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap519]
+Options=FieldName=Транзисторы SMT - BJT.Library Path|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap520]
+Options=FieldName=Транзисторы SMT - BJT.Footprint Path|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap521]
+Options=FieldName=Транзисторы SMT - BJT.Sim Model Name|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap522]
+Options=FieldName=Транзисторы SMT - BJT.Sim File|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap523]
+Options=FieldName=Транзисторы SMT - BJT.Sim Kind|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap524]
+Options=FieldName=Транзисторы SMT - BJT.Sim SubKind|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap525]
+Options=FieldName=Транзисторы SMT - BJT.Sim Spice Prefix|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap526]
+Options=FieldName=Транзисторы SMT - BJT.Sim Netlist|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap527]
+Options=FieldName=Транзисторы SMT - BJT.Sim Port Map|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap528]
+Options=FieldName=Транзисторы SMT - BJT.Sim Parameters|TableNameOnly=Транзисторы SMT - BJT|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap529]
+Options=FieldName=Транзисторы SMT - MOSFET.Part Number|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap530]
+Options=FieldName=Транзисторы SMT - MOSFET.Library Ref|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap531]
+Options=FieldName=Транзисторы SMT - MOSFET.Footprint Ref|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap532]
+Options=FieldName=Транзисторы SMT - MOSFET.Footprint Ref 2|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap533]
+Options=FieldName=Транзисторы SMT - MOSFET.Footprint Ref 3|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap534]
+Options=FieldName=Транзисторы SMT - MOSFET.Footprint Ref 4|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap535]
+Options=FieldName=Транзисторы SMT - MOSFET.Library Path|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap536]
+Options=FieldName=Транзисторы SMT - MOSFET.Footprint Path|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap537]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Model Name|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap538]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim File|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap539]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Kind|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap540]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim SubKind|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap541]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Spice Prefix|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap542]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Netlist|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap543]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Port Map|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap544]
+Options=FieldName=Транзисторы SMT - MOSFET.Sim Parameters|TableNameOnly=Транзисторы SMT - MOSFET|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap545]
+Options=FieldName=Транзисторы THM - BJT.Part Number|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap546]
+Options=FieldName=Транзисторы THM - BJT.Library Ref|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap547]
+Options=FieldName=Транзисторы THM - BJT.Footprint Ref|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap548]
+Options=FieldName=Транзисторы THM - BJT.Footprint Ref 2|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap549]
+Options=FieldName=Транзисторы THM - BJT.Footprint Ref 3|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap550]
+Options=FieldName=Транзисторы THM - BJT.Footprint Ref 4|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap551]
+Options=FieldName=Транзисторы THM - BJT.Library Path|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap552]
+Options=FieldName=Транзисторы THM - BJT.Footprint Path|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap553]
+Options=FieldName=Транзисторы THM - BJT.Sim Model Name|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap554]
+Options=FieldName=Транзисторы THM - BJT.Sim File|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap555]
+Options=FieldName=Транзисторы THM - BJT.Sim Kind|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap556]
+Options=FieldName=Транзисторы THM - BJT.Sim SubKind|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap557]
+Options=FieldName=Транзисторы THM - BJT.Sim Spice Prefix|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap558]
+Options=FieldName=Транзисторы THM - BJT.Sim Netlist|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap559]
+Options=FieldName=Транзисторы THM - BJT.Sim Port Map|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap560]
+Options=FieldName=Транзисторы THM - BJT.Sim Parameters|TableNameOnly=Транзисторы THM - BJT|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap561]
+Options=FieldName=Трансформаторы - Ethernet.Part Number|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap562]
+Options=FieldName=Трансформаторы - Ethernet.Library Ref|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap563]
+Options=FieldName=Трансформаторы - Ethernet.Footprint Ref|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap564]
+Options=FieldName=Трансформаторы - Ethernet.Footprint Ref 2|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Footprint Ref 2|FieldType=1|ParameterName=[Footprint Ref 2]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap565]
+Options=FieldName=Трансформаторы - Ethernet.Footprint Ref 3|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Footprint Ref 3|FieldType=1|ParameterName=[Footprint Ref 3]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap566]
+Options=FieldName=Трансформаторы - Ethernet.Footprint Ref 4|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Footprint Ref 4|FieldType=1|ParameterName=[Footprint Ref 4]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap567]
+Options=FieldName=Трансформаторы - Ethernet.Library Path|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap568]
+Options=FieldName=Трансформаторы - Ethernet.Footprint Path|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap569]
+Options=FieldName=Трансформаторы - Ethernet.Sim Model Name|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Model Name|FieldType=1|ParameterName=[Sim Model Name]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap570]
+Options=FieldName=Трансформаторы - Ethernet.Sim File|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim File|FieldType=1|ParameterName=[Sim File]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap571]
+Options=FieldName=Трансформаторы - Ethernet.Sim Kind|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Kind|FieldType=1|ParameterName=[Sim Kind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap572]
+Options=FieldName=Трансформаторы - Ethernet.Sim SubKind|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim SubKind|FieldType=1|ParameterName=[Sim SubKind]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap573]
+Options=FieldName=Трансформаторы - Ethernet.Sim Spice Prefix|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Spice Prefix|FieldType=1|ParameterName=[Sim Spice Prefix]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap574]
+Options=FieldName=Трансформаторы - Ethernet.Sim Netlist|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Netlist|FieldType=1|ParameterName=[Sim Netlist]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap575]
+Options=FieldName=Трансформаторы - Ethernet.Sim Port Map|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Port Map|FieldType=1|ParameterName=[Sim Port Map]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap576]
+Options=FieldName=Трансформаторы - Ethernet.Sim Parameters|TableNameOnly=Трансформаторы - Ethernet|FieldNameOnly=Sim Parameters|FieldType=1|ParameterName=[Sim Parameters]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0

@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=C6 NewDesignator=C7
+Change Component Designator: OldDesignator=C7 NewDesignator=C6
+Change Component Designator: OldDesignator=XP5 NewDesignator=XP6
+Change Component Designator: OldDesignator=XP6 NewDesignator=XP7
+Change Component Designator: OldDesignator=XP7 NewDesignator=XP8
+Change Component Designator: OldDesignator=XP8 NewDesignator=XP5
+Change Net Name : Old Net Name=NetC6_1 New Net Name=NetC7_1
+Added Member To Class: ClassName=Sheet1 Member=Component C7 Capacitor
+Added Member To Class: ClassName=Sheet1 Member=Component XP7 Motor(B)21
+Added Member To Class: ClassName=Sheet1 Member=Component XP8 Motor(B)22

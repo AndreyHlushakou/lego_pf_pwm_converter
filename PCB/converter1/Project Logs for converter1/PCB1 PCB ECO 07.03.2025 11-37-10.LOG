@@ -1,0 +1,17 @@
+Change Component Footprint: Designator=XP10 Old Footprint=PLS-2RR New Footprint=PLS-2
+Change component parameters: Designator = "XP10" ("XP10"); Footprint = "PLS-2RR"; UniqueID = "\ZGMYARMQ" ("\ZGMYARMQ")
+Change component parameters (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "PLS-2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "PLS-2"; VariantName = "[No Variations]"
+Added Room: Name=Sheet1

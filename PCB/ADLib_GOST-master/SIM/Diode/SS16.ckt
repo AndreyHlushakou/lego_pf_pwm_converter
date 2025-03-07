@@ -1,0 +1,16 @@
+**********************************
+* Copyright:                     *
+*   Thomatronik GmbH, Germany    *
+*   info@thomatronik.de          *
+**********************************
+*   SPICE3
+.subckt SS16 1 2
+ddio 1 2 legd
+dgr 1 2 grd
+.model legd d is = 9.5727E-008 n = 1.14007 rs = 0.0887941
++ eg = 0.849688 xti = 2.99996
++ cjo = 2.35293E-010 vj = 0.610616 m = 0.540837 fc = 0.5
++ tt = 1.4427E-009 bv = 66 ibv = 5 af = 1 kf = 0
+.model grd d is = 9.6926E-009 n = 1.83874 rs = 0.015442
++ eg = 1.49044 xti = 2.01516
+.ends

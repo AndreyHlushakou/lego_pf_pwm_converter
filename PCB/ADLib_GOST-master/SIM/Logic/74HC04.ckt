@@ -1,0 +1,30 @@
+
+.SUBCKT 74HC04  A Y VCC GND    
+*             In Out Vcc Gnd  
+X9 3 VCC GND 5 HCINV 
+X10 5 VCC GND 4 HCINV 
+X11 4 VCC GND 6 HCINV 
+LIN A 3 3.1N 
+CIN 3 0 1.17P 
+LOUT 6 Y 2.9N 
+COUT 6 0 1.03P 
+.ENDS 
+********** 
+.SUBCKT HCINV 4  2   3   1 
+*             In Vcc Gnd Out 
+M1 1 4 3 3 N1 
+M2 1 4 2 2 P1 
+.ENDS 
+********** 
+.MODEL N1 NMOS (LEVEL=1 VTO=.65 KP=4.75M GAMMA=1.24 
++ PHI=.75 LAMBDA=10.4M RD=4.2 RS=4.2 IS=50F PB=.8 MJ=.46 
++ CBD=1.21P CBS=1.45P CGSO=3.12N CGDO=2.6N CGBO=4.28N) 
+*   -- Assumes default L=100U W=100U -- 
+*  6 Volt  .1 Amp  30 ohm  Enh-Mode N-Channel MOSFET  05-21-1993 
+********** 
+.MODEL P1 PMOS (LEVEL=1 VTO=-.65 KP=4.75M GAMMA=1.24 
++ PHI=.75 LAMBDA=10.4M RD=4.2 RS=4.2 IS=50F PB=.8 MJ=.46 
++ CBD=1.21P CBS=1.45P CGSO=3.12N CGDO=2.6N CGBO=4.28N) 
+*   -- Assumes default L=100U W=100U -- 
+*  6 Volt  .1 Amp  30 ohm  Enh-Mode P-Channel MOSFET  05-21-1993 
+********** 

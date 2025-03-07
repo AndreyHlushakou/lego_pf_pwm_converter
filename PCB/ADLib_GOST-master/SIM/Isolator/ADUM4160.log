@@ -1,0 +1,16 @@
+
+Checking C:\Users\Andrew\SkyDrive\ADLib\SIM\Isolator\ADUM4160.ibs for IBIS 4.2 Compatibility...
+
+ERROR (line    7) - File name opened 'ADUM4160.ibs' not the same as File_name 'adum4160_full.ibs'.
+NOTE (line  628) - Pulldown Typical data is non-monotonic
+NOTE (line  740) - Pullup Typical data is non-monotonic
+NOTE (line 1082) - Pulldown Typical data is non-monotonic
+NOTE (line 1194) - Pullup Typical data is non-monotonic
+NOTE (line 1536) - Pulldown Typical data is non-monotonic
+NOTE (line 1629) - Pullup Typical data is non-monotonic
+NOTE (line 1991) - Pulldown Typical data is non-monotonic
+NOTE (line 2103) - Pullup Typical data is non-monotonic
+
+Errors  : 1
+
+File Failed

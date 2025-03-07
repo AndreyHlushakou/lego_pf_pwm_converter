@@ -1,0 +1,172 @@
+* IRTCLIB2.txt
+* Models for PSpice
+* Intuitive Research and Technology Corp
+* www.irtc-hq.com
+* Copyright 2007 - All Rights Reserved
+*
+* Models included:
+* LM117S - LM117 voltage regulator improved model
+* 4N49N - 4N49 Optocoupler
+* 6N140 - 6N140 Darlington Optocoupler
+* PS2502 - PS2502 Optocoupler
+* PS2501 - PS2501 Optocoupler
+* 2823 - High voltage driver IC
+* Q2N6058 - 2N6058 Darlington Power Transistor subcircuit
+*
+* LM117S - LM117 voltage regulator improved model *
+.SUBCKT LM117S IN OUT ADJ 
+E_E1     IN $N_0001 VALUE { MAX(100K*V($N_0002,$N_0003),0.3) }
+R_XR1    $N_0002 0 1E24
+X_H4     $N_0004 $N_0005 $N_0006 0 LM117S_H4 
+V_VIL    $N_0007 0 DC 2.2  
+E_E2     $N_0001 $N_0004 VALUE { MAX(10K*V($N_0006,$N_0007),0) }
+R_Radj   OUT ADJ  25K  
+R_R11    OUT $N_0002  100  
+C_C5     IN $N_0003  100p  
+R_R10    $N_0003 $N_0008  100  
+V_Vr     $N_0008 ADJ DC 1.25V  
+R_R9     $N_0005 OUT  0.5  
+C_C6     $N_0002 $N_0003  40u IC=0 
+.ENDS LM117S
+*
+.subckt LM117S_H4 1 2 3 4  
+H_H4         3 4 VH_H4 1
+VH_H4         1 2 0V
+.ends LM117S_H4
+*
+* 4N49N - 4N49 Optocoupler *
+* connections:  Transistor E
+*               | Transistor B
+*               | | Transistor C
+*               | | | Diode +
+*               | | | | Diode -
+*               | | | | |
+.SUBCKT  4N49N  1 2 3 5 7
+D1     6  7  D4N49N
+V_D1   5  6  0 
+FT     0 10  V_D1  1
+RT    10  0  RTC 1
+C1     5  3  2.5pF
+R1     5  3  10E+12
+G_IB_Q1  1 2 VALUE = {(0.2)*(PWR(V(10,0),1.6))} 
+V_Q1  3 3a 0 
+Q1    3a 2 1   Q4N49N
+.MODEL D4N49N D(IS=9.135E-12 N=2.240 RS=1.000E-3 IKF=6.699E-3 XTI=10.7875
++               EG=1.420 CJO=1.000E-12 M=.3333 VJ=.75 FC=.5 ISR=1.414E-6
++               NR=60 BV=15.10 IBV=10 TT=5.000E-9)
+.model Q4N49N NPN(Is=18.8f Xti=3 Eg=1.11 Vaf=8 Bf=996.4 Ise=18.8f Ne=1.454
++             Ikf=.2092 Nk=.8714 Xtb=1.36 Var=100 Br=7.113 Isc=18.8f Nc=3.32
++             Ikr=.1147 Rc=1.296 Cjc=23.7p Mjc=.3333 Vjc=.75 Fc=.5 Cje=17.5p
++             Mje=.3333 Vje=.75 Tr=1n Tf=1n Itf=1 Xtf=0 Vtf=10)
+.MODEL RTC RES(R=1 TC1=-8.824596m TC2=26.06933u)
+.ENDS 4N49N
+*
+* 6N140 Darlington Optocoupler *
+* connections:  Diode +
+*               | Diode -
+*               | | VCC
+*               | | | VOUT
+*               | | | | GND
+*               | | | | |
+.SUBCKT  6N140  1 2 3 4 5
+D1     1  6  D6N140
+V_D1   6  2   0 ; ZERO VOLTS
+FT     0 10  V_D1  1
+RT    10  0  RTC 1
+C1     1  3  2.5pF
+R1     1  3  10E+12 ; ISOLATION
+G_IB_Q1  3   7  VALUE = {(0.03m)*(PWR(V(10,0),0.3))} ; OPTICAL COUPLING GAIN
+Q1    3 7 8   Q2N2222
+RG   8  5  5K
+Q2    4  8  5  Q2N2222   
+.model Q2N2222	NPN(Is=14.34f Xti=3 Eg=1.11 Vaf=74.03 Bf=100 Ne=1.307
++		Ise=14.34f Ikf=.2847 Xtb=1.5 Br=6.092 Nc=2 Isc=0 Ikr=0 Rc=1
++		Cjc=38p Mjc=.3416 Vjc=.75 Fc=.5 Cje=126p Mje=.377 Vje=.75
++		Tr=200n Tf=12n Itf=.6 Vtf=1.7 Xtf=3 Rb=10)
+.MODEL RTC RES(R=1) ; can add TC
+.model D6N140   D(Is=3.941E-18 N=1.646 Rs=0 Ikf=1 Xti=3 Eg=1.42 Cjo=1p M=.3333
++               Vj=.75 Fc=.5 Isr=0 Nr=2 Bv=5 Ibv=10u Tt=5n)
+.ENDS 6N140
+*
+* PS2502 Optocoupler *
+*              D+
+*              | D-
+*              | | QE
+*              | | | QC
+.SUBCKT PS2502 1 2 3 4
+D1  1  6  DOPTO2
+VS  6  2  0
+FT  0 10  VS  1
+RT 10  0  RTCN  1
+G1  3  7 10  0  1m
+Q1  4  7  8  QOPTO2
+Q2  4  8  3  QOPTO2
+RI  2  3  1E12
+CI  2  3  .5p
+.MODEL DOPTO2 D(Is=3.06f Rs=.2072 N=1.5 Xti=8 Eg=1.42
++ Bv=100 Ibv=100u Cjo=10p Vj=.75 M=.3333 Fc=.5 Tt=5n)
+.MODEL QOPTO2 NPN(IS=10f BF=200 IKF=1.8 NK=.9 ISE=350f NE=1.7
++ BR=1 ISC=200p RC=.4 CJE=5p CJC=2p TF=60n TR=10n)
+.MODEL RTCN RES(R=1 TC1=-.1m TC2=-60u)
+.ENDS PS2502
+*
+* PS2501 Optocoupler *
+*              D+
+*              | D-
+*              | | QE
+*              | | | QC
+.SUBCKT PS2501 1 2 3 4
+D1  1  6  DOPTO1
+VS  6  2  0
+FT  0 10  VS  1
+RT 10  0  RTCN  1
+G1  3  7 10  0  10m
+Q1  4  7  3  QOPTO1
+RI  2  3  1E12
+CI  2  3  .5p
+.MODEL DOPTO1 D(Is=3.06f Rs=.2072 N=1.5 Xti=8 Eg=1.42
++ Bv=100 Ibv=100u Cjo=10p Vj=.75 M=.3333 Fc=.5 Tt=5n)
+.MODEL QOPTO1 NPN(IS=10f BF=280 IKF=2.5 NK=6 ISE=10p NE=2
++ VAF=10 BR=.4 ISC=2.5n RC=1 CJE=50p CJC=50p TF=2n TR=15n)
+.MODEL RTCN RES(R=1 TC1=-1.2m TC2=-30u)
+.ENDS PS2501
+*
+* 2823 - High voltage driver IC *
+.SUBCKT 2823 IN OUT GND COM
+R1         IN $N_0001  2.7K
+R2         $N_0001 $N_0002  7.2K
+R3         $N_0002 GND  3k
+Q1         OUT $N_0001 $N_0002 QDAR1
+Q2         OUT $N_0002 GND QDAR2
+D1         OUT COM DARLING
+D2         GND OUT DARLING
+D3         GND IN DARLING
+.ENDS 2823
+*
+.model DARLING  D(Is=36.78E-18 N=1.75 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=1p M=.3333
++                Vj=.75 Fc=.5 Isr=993.1e-9 Nr=10 Bv=100 Ibv=100u Tt=5n)
+*
+.model QDAR2      NPN(Is=42.9p Xti=3 Eg=1.11 Vaf=100 Bf=46.9 Ise=99.71p
++ Ne=1.428 Ikf=174.1 Nk=.5 Xtb=1.5 Var=100 Br=1 Isc=5u Nc=1.014
++ Ikr=10.73 Rc=1.145 Cjc=2p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5p
++ Mje=.3333 Vje=.75 Tr=10n Tf=1n Itf=1 Xtf=0 Vtf=10)
+*
+.model QDAR1      NPN( Is=2.72f Xti=3 Eg=1.11 Vaf=100 Bf=53.92 Ise=38.95f 
++ Ne=1.337 Ikf=2.693 Nk=.5 Xtb=1.5 Var=100 Br=1 Isc=2.72f Nc=1.008 Ikr=21.85 
++ Rc=90.133 Cjc=15p Mjc=.3333 Vjc=.75 Fc=.5 Cje=20p Mje=.3333 Vje=.75 Tr=60n 
++ Tf=4n Itf=1 Xtf=0 Vtf=10) 
+*
+* Q2N6058 - 2N6058 Darlington Power Transistor subcircuit *
+* MODEL TESTED VALID UP TO 10 AMPS ONLY
+.SUBCKT Q2N6058 C B E
+R_R1         B $N_0001  5K  
+R_R2         $N_0001 E  50  
+D_D1         E C D1N4148 
+Q_Q1         C B $N_0001 Q2N6058S
+Q_Q2         C $N_0001 E Q2N6058S
+.MODEL Q2N6058S NPN(IS=898.1E-15 BF=368.3 VAF=100 IKF=.7076
++ ISE=898.1E-15 NE=1.649 BR=2.351 VAR=100 IKR=10.00E-3 ISC=898.1E-15
++ NC=2.998 NK=.5814 RB=.6 RC=.1963 CJE=154.2E-12 MJE=.3333 CJC=154.2E-12
++ MJC=.3333 TF=10.00E-9 XTF=10 VTF=10 ITF=1 TR=922.6E-9 XTB=4)
+.ENDS Q2N6058
+*$

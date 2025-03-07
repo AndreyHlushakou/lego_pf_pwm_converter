@@ -1,0 +1,16 @@
+**********************************
+* Copyright:                     *
+*   Thomatronik GmbH, Germany    *
+*   info@thomatronik.de          *
+**********************************
+*   PSPICE
+.subckt SS14 1 2
+ddio 1 2 legd
+dgr 1 2 grd
+.model legd d is = 1E-009 n = 0.625832 rs = 0.0619933
++ eg = 0.745352 xti = 0.5
++ cjo = 2.83445E-010 vj = 0.739175 m = 0.484673 fc = 0.5
++ tt = 1.4427E-009 bv = 44 ibv = 0.5 af = 1 kf = 0
+.model grd d is = 1E-008 n = 1.73481 rs = 0.0283094
++ eg = 1.8 xti = 4
+.ends

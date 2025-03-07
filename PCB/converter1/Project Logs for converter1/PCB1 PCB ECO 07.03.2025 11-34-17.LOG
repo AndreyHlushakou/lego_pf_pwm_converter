@@ -1,0 +1,61 @@
+Removed Pin From Net: NetName=NetDD1_46 Pin=XP6-1
+Removed Pin From Net: NetName=NetDD1_40 Pin=XP6-2
+Removed Pin From Net: NetName=NetDD1_41 Pin=XP6-3
+Removed Pin From Net: NetName=NetDD1_39 Pin=XP8-1
+Removed Pin From Net: NetName=NetDD1_45 Pin=XP8-3
+Change Component Footprint: Designator=XP6 Old Footprint=PLS-3 New Footprint=PLS-2RR
+Change Component Footprint: Designator=XP8 Old Footprint=PLS-3 New Footprint=PLS-2RR
+Change component parameters: Designator = "XP6" ("XP6"); Footprint = "PLS-3"; UniqueID = "\PEYINOTH" ("\PEYINOTH")
+Change component parameters (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "29"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Change component parameters: Designator = "XP8" ("XP8"); Footprint = "PLS-3"; UniqueID = "\EMRNKKLG" ("\EMRNKKLG")
+Change component parameters (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "29"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Added Component: Designator=XP10(PLS-2RR)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "29"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetDD1_39 Pin=XP6-1
+Added Pin To Net: NetName=NetDD1_41 Pin=XP8-1
+Added Pin To Net: NetName=NetDD1_40 Pin=XP8-2
+Added Pin To Net: NetName=NetDD1_46 Pin=XP10-1
+Added Pin To Net: NetName=NetDD1_45 Pin=XP10-2
+Added Pin To Net: NetName=NetDD1_38 Pin=DD1-38
+Added Pin To Net: NetName=NetDD1_38 Pin=XP6-2
+Added Net: Name=NetDD1_38
+Added Member To Class: ClassName=Sheet1 Member=Component XP10 Text

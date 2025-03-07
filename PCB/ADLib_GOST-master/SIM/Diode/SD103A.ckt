@@ -1,0 +1,29 @@
+* http://www.vishay.com/docs/85835/85835.txt *
+* *
+.SUBCKT SD103A 1 2
+.MODEL SD D (
++ N=1.03
++ IS=1.0E-007
++ RS=0.78
++ EG=0.69
++ XTI=2
++ CJO=2.8E-011
++ VJ=0.2
++ M=.34
++ FC=0.5
++ TT=0.8E-008
++ BV=40
++ IBV=0.001
++ KF=0
++ AF=1 )
+.MODEL PND D (
++ N=4.55878
++ IS=1E-9
++ RS=0.047093
++ EG=1.11
++ XTI=3 )
+.model AD D Is=0.18u N=1100 Rs=.01 
+D1 1 2 SD
+D2 1 2 PND
+D3 2 1 AD
+.ENDS
