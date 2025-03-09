@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetDD1_40 Pin=XP6-1
+Removed Pin From Net: NetName=NetDD1_39 Pin=XP6-2
+Removed Pin From Net: NetName=VCC Pin=XP7-1
+Removed Pin From Net: NetName=+7.4 Pin=XP7-2
+Removed Pin From Net: NetName=GND Pin=XP7-3
+Removed Pin From Net: NetName=NetDD1_38 Pin=XP7-4
+Removed Pin From Net: NetName=NetDD1_42 Pin=XP8-1
+Removed Pin From Net: NetName=NetDD1_41 Pin=XP8-2
+Removed Pin From Net: NetName=NetDD1_46 Pin=XP10-1
+Removed Pin From Net: NetName=NetDD1_45 Pin=XP10-2
+Removed Member From Class: ClassName=Sheet1 Member=XP6
+Removed Member From Class: ClassName=Sheet1 Member=XP7
+Removed Member From Class: ClassName=Sheet1 Member=XP8
+Removed Member From Class: ClassName=Sheet1 Member=XP10
+Added Pin To Net: NetName=GND Pin=XP?-1
+Added Pin To Net: NetName=VCC Pin=XP?-2
+Added Member To Class: ClassName=Sheet1 Member=Component XP? Text

@@ -1,0 +1,17 @@
+Change Component Footprint: Designator=ZQ1 Old Footprint=HC-49SM New Footprint=SMD 5x3.2mm
+Change component parameters: Designator = "ZQ1" ("ZQ1"); Footprint = "HC-49SM"; UniqueID = "\BCEJNJCQ" ("\BCEJNJCQ")
+Change component parameters (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Functional Analog"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "12"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Load Capacitance"; Value = "16pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Geyer"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Frequency"; Value = "8MHz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "KX-9A 8.0 MHz 30/50/100 16 pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "08.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shunt Capacitance"; Value = "5pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Coefficient"; Value = "±50ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Резонатор"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "KX-9A 8.0 MHz 30/50/100 16 pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Working Temperature Max"; Value = "+70°С"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Working Temperature Min"; Value = "-20°С"; VariantName = "[No Variations]"

@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=ZQ1 Old Footprint=HC-49S New Footprint=HC-49SM
+Change component parameters: Designator = "ZQ1" ("ZQ1"); Footprint = "HC-49S"; UniqueID = "\MLRIIKPU" ("\MLRIIKPU")
+Change component parameters (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "17"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Load Capacitance"; Value = "20pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Frequency"; Value = "8MHz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "HC49SM-8.000MHz-20pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "08.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Coefficient"; Value = "±50ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Резонатор"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "HC49S-8.000MHZ-20pF"; VariantName = "[No Variations]"

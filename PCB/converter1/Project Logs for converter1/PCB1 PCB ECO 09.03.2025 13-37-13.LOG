@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GND Pin=XP?-1
+Removed Pin From Net: NetName=VCC Pin=XP?-2
+Change Component Designator: OldDesignator=XP? NewDesignator=XP5
+Added Pin To Net: NetName=NetDD1_34 Pin=XP5-1
+Added Pin To Net: NetName=NetDD1_37 Pin=XP5-2

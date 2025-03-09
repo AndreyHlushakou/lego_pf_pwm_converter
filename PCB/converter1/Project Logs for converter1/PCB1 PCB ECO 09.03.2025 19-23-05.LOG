@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=NetC3_1 Pin=DD1-7
+Removed Pin From Net: NetName=GND Pin=DD1-44
+Change Component Footprint: Designator=SB1 Old Footprint=DTS-32 New Footprint=DTSM-32
+Change Component Comment : Designator=SB1 Old Comment=reset New Comment=Text
+Change component parameters: Designator = "SB1" ("SB1"); Footprint = "DTS-32"; UniqueID = "\NUWSOCJE" ("\NUWSOCJE")
+Change component parameters (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Backlight"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "5mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "27"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Isolator Resistance"; Value = "100meg"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Current"; Value = "50mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Contacts"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "DTSM-32"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "17.04.2014"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "0.1ohm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Переключатель"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "DTSM-32"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC3_1 Pin=DD1-44

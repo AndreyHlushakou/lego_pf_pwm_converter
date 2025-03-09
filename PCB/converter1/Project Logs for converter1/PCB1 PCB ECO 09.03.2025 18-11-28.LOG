@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=NetDD1_10 Pin=R17-1
+Removed Pin From Net: NetName=NetDD1_12 Pin=R18-1
+Removed Pin From Net: NetName=NetDD1_29 Pin=R19-1
+Removed Pin From Net: NetName=NetDD1_31 Pin=R20-1
+Change Component Comment : Designator=XP5 Old Comment=frimware New Comment=firmware
+Added Pin To Net: NetName=NetDD1_29 Pin=R17-1
+Added Pin To Net: NetName=NetDD1_31 Pin=R18-1
+Added Pin To Net: NetName=NetDD1_10 Pin=R19-1
+Added Pin To Net: NetName=NetDD1_12 Pin=R20-1

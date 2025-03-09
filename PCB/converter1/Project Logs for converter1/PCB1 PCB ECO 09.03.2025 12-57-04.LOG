@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=VCC Pin=XP5-1
+Removed Pin From Net: NetName=NetDD1_34 Pin=XP5-2
+Removed Pin From Net: NetName=NetDD1_37 Pin=XP5-3
+Removed Pin From Net: NetName=GND Pin=XP5-4
+Removed Pin From Net: NetName=NetDD1_39 Pin=XP6-1
+Removed Pin From Net: NetName=NetDD1_38 Pin=XP6-2
+Removed Pin From Net: NetName=NetDD1_42 Pin=XP7-4
+Removed Pin From Net: NetName=NetDD1_41 Pin=XP8-1
+Removed Pin From Net: NetName=NetDD1_40 Pin=XP8-2
+Removed Member From Class: ClassName=Sheet1 Member=XP5
+Removed Member From Class: ClassName=Sheet1 Member=XP9
+Added Component: Designator=XP?(PLS-2RR)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "29"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2R"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetDD1_40 Pin=XP6-1
+Added Pin To Net: NetName=NetDD1_39 Pin=XP6-2
+Added Pin To Net: NetName=NetDD1_38 Pin=XP7-4
+Added Pin To Net: NetName=NetDD1_42 Pin=XP8-1
+Added Pin To Net: NetName=NetDD1_41 Pin=XP8-2
+Added Pin To Net: NetName=NetDD1_34 Pin=XP?-1
+Added Pin To Net: NetName=NetDD1_37 Pin=XP?-2
+Added Member To Class: ClassName=Sheet1 Member=Component XP? frimware

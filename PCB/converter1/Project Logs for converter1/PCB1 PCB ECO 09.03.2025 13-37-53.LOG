@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=NetDD1_40 Pin=XP6-1
+Removed Pin From Net: NetName=NetDD1_39 Pin=XP6-2
+Removed Pin From Net: NetName=VCC Pin=XP7-1
+Removed Pin From Net: NetName=+7.4 Pin=XP7-2
+Removed Pin From Net: NetName=GND Pin=XP7-3
+Removed Pin From Net: NetName=NetDD1_38 Pin=XP7-4
+Removed Pin From Net: NetName=NetDD1_42 Pin=XP8-1
+Removed Pin From Net: NetName=NetDD1_41 Pin=XP8-2
+Removed Pin From Net: NetName=NetDD1_46 Pin=XP10-1
+Removed Pin From Net: NetName=NetDD1_45 Pin=XP10-2
+Change Component Designator: OldDesignator=XP? NewDesignator=XP5
+Change component parameters: Designator = "XP6" ("XP6"); Footprint = "PLS-2"; UniqueID = "\BAHYEKSW" ("\BAHYEKSW")
+Change component parameters (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "9"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "PLS-10"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "10"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "PLS-10"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=XP6-1
+Added Pin To Net: NetName=VCC Pin=XP6-2
+Added Member To Class: ClassName=Sheet1 Member=Component XP5 frimware
+Added Member To Class: ClassName=Sheet1 Member=Component XP6 Text
