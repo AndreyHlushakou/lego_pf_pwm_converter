@@ -1,11 +1,11 @@
 [OutputDatabaseLinkFile]
 Version=1.1
 [DatabaseLinks]
-ConnectionString=Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Andrew\Desktop\ADLib\Lib_IMP_GOST.mdb;Persist Security Info=False
+ConnectionString=Provider=MICROSOFT.ACE.OLEDB.12.0;Data Source=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\ADLib_GOST-master\Lib_IMP_GOST.mdb;Persist Security Info=False
 AddMode=3
 RemoveMode=1
 UpdateMode=2
-ViewMode=0
+ViewMode=1
 LeftQuote=[
 RightQuote=]
 QuoteTableNames=1
@@ -19,7 +19,7 @@ LibrarySearchPath=.
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=1
 SchemaName=
-LastFocusedTable=Диоды SMT - Общ
+LastFocusedTable=Соединители Электрические - Межплатные
 [Table1]
 SchemaName=
 TableName=Диоды SMT - Общ
@@ -188,12 +188,18 @@ TableName=Светодиоды THM - Общ
 Enabled=True
 UserWhere=0
 UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=94|Library Ref0=77|Footprint Ref0=94|Footprint Ref 20=101|Footprint Ref 30=101|Footprint Ref 40=101|Library Path0=94|Footprint Path0=98|Sim Model Name0=109|Sim File0=62|Sim Kind0=67|Sim SubKind0=87|Sim Spice Prefix0=102|Sim Netlist0=77|Sim Port Map0=91|Sim Parameters0=100|ID0=34|Value0=94|Forward Voltage0=109|Forward Current0=108|Power Dissipation0=116|Luminous Flux0=97|Color0=69|Leds0=46|Footprint0=72|Specification0=89|Application Category0=131|Working Temperature Min0=159|Working Temperature Max0=160|Manufacturer0=97|Functional Analog0=118
 [Table29]
 SchemaName=
 TableName=Соединители Электрические - Межплатные
 Enabled=True
 UserWhere=0
 UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=118|Library Ref0=77|Footprint Ref0=92|Footprint Ref 20=101|Footprint Ref 30=101|Footprint Ref 40=101|Library Path0=130|Footprint Path0=144|Sim Model Name0=109|Sim File0=62|Sim Kind0=67|Sim SubKind0=87|Sim Spice Prefix0=102|Sim Netlist0=77|Sim Port Map0=91|Sim Parameters0=100|ID0=34|Value0=118|Limit Voltage0=90|Limit Current0=89|Pins0=44|Connector Type0=104|Resistance0=77|Surface Finish0=95|Pitch0=48|Specification0=89|Application Category0=131|Working Temperature Min0=159|Working Temperature Max0=160|Manufacturer0=93|Functional Analog0=120
 [Table30]
 SchemaName=
 TableName=Соединители Электрические - Общ
