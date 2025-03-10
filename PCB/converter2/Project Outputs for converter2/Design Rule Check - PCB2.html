@@ -1,0 +1,593 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10.03.2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">20:19:57</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc" class="file"><acronym title="D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc">D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">83</td></tr>
+</table>
+</td>
+</table><a name="ID0XHXSGOG2GPFG4PM4XORYF0HWFNVSTCSOGOQ31H3FW1JW33NSOTF"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTOJ5MHRA2PDUP5MVKNA4EVG04GI0KVHUSMID4AC1UVMXMD2QVMWK">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4OIOCUGN5N4YLGZ53H1WT1VD4IAIS34THSX5VTKOAB3PHSNEYEGB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPPSXEHIGTVEMOFMAEFIMNRN5ULK3BISX5EIX5FD53YNP3LP4AZOJ">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ1PRTNNR4UDGOROI2UG5LGAPJM1VGZSFVH0TKPCV5Z5S3EQGJXP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR2ZVUTN4XT00ILHINUY3XF15LPI4LOVNMIJ4FHVZDIHOEE4SMJK">Width Constraint (Min=0.1mm) (Max=0.5mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEFVGXJUOEFGMD24CLMVZ1JSQFGHN13Z5IER1FOLVHQWST5ODSWPJ">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTEZ22WH5LALRKMJMCVRSBCSQAJXIC4DODV4L5GGEV5PCYVIJEM4G">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBMGXBBAN0L1GJHFBABFXLCEUKBAFEG2RA3JYJALI3EDNP3LFNKSF">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFNP5HLZDUMEKDRJKXVYPD2YGCBZFIRLASWOZ2QOVNWMOJWV52BKL">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">25</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZXLLG3ZSJSX4DUEZHWQQUCE1TOM5S5HHWND0NEZPMKSFCUU1KO">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">25</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPJ4ECGVIUBIZO20H0HFYJBZX2B0OUTWJMR5U01FJC0VVBUG2I2EK">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDILLD1ONO4AE2I00ZC4KPQUCTOCA21PWXXHVUFWDXTVLQONC3P40P">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRAXIUOWO12JXEWSPQ0GTB3QX3FEX5S2OYLUFQWPTE4AKQPTC0U0N">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">83</td>
+</tr>
+</table><br><a name="IDTOJ5MHRA2PDUP5MVKNA4EVG04GI0KVHUSMID4AC1UVMXMD2QVMWK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-10(18.05mm,2.875mm) on Top Layer And Pad IC1-11(18.7mm,2.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-14(18.7mm,10.125mm) on Top Layer And Pad IC1-15(18.05mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-15(18.05mm,10.125mm) on Top Layer And Pad IC1-16(17.4mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-16(17.4mm,10.125mm) on Top Layer And Pad IC1-17(16.75mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-17(16.75mm,10.125mm) on Top Layer And Pad IC1-18(16.1mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-18(16.1mm,10.125mm) on Top Layer And Pad IC1-19(15.45mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-19(15.45mm,10.125mm) on Top Layer And Pad IC1-20(14.8mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-2(12.85mm,2.875mm) on Top Layer And Pad IC1-3(13.5mm,2.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-20(14.8mm,10.125mm) on Top Layer And Pad IC1-21(14.15mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-21(14.15mm,10.125mm) on Top Layer And Pad IC1-22(13.5mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-22(13.5mm,10.125mm) on Top Layer And Pad IC1-23(12.85mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1834.926mil|Location2.Y=1846.176mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-23(12.85mm,10.125mm) on Top Layer And Pad IC1-24(12.2mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2063.273mil|Location2.X=2074.523mil|Location1.Y=1810.32mil|Location2.Y=1821.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2063.273mil|Location2.X=2074.523mil|Location1.Y=1810.32mil|Location2.Y=1821.57mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad IC1-23(12.85mm,10.125mm) on Top Layer And Track (10.2mm,10.125mm)(12.2mm,10.125mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-4(14.15mm,2.875mm) on Top Layer And Pad IC1-5(14.8mm,2.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-6(15.45mm,2.875mm) on Top Layer And Pad IC1-7(16.1mm,2.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1549.493mil|Location2.Y=1560.743mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-8(16.75mm,2.875mm) on Top Layer And Pad IC1-9(17.4mm,2.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPPSXEHIGTVEMOFMAEFIMNRN5ULK3BISX5EIX5FD53YNP3LP4AZOJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.118mil|Location2.X=2180.925mil|Location1.Y=1430.512mil|Location2.Y=1630.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.118mil|Location2.X=2180.925mil|Location1.Y=1430.512mil|Location2.Y=1630.295mil|Absolute=True">Un-Routed Net Constraint: Net NetIC1_1 Between Pad IC1-1(12.2mm,2.875mm) on Top Layer And Track (12.856mm,1.144mm)(12.856mm,2.869mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFNP5HLZDUMEKDRJKXVYPD2YGCBZFIRLASWOZ2QOVNWMOJWV52BKL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-1(12.2mm,2.875mm) on Top Layer And Pad IC1-2(12.85mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.972mil|Location2.X=2076.396mil|Location1.Y=1491.883mil|Location2.Y=1503.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.972mil|Location2.X=2076.396mil|Location1.Y=1491.883mil|Location2.Y=1503.133mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.238mm &lt; 0.254mm) Between Pad IC1-1(12.2mm,2.875mm) on Top Layer And Via (12.875mm,1.125mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.238mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-10(18.05mm,2.875mm) on Top Layer And Pad IC1-11(18.7mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-10(18.05mm,2.875mm) on Top Layer And Pad IC1-9(17.4mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.194mil|Location2.X=2329.444mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.194mil|Location2.X=2329.444mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-11(18.7mm,2.875mm) on Top Layer And Pad IC1-12(19.35mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.194mil|Location2.X=2329.444mil|Location1.Y=1838.926mil|Location2.Y=1850.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.194mil|Location2.X=2329.444mil|Location1.Y=1838.926mil|Location2.Y=1850.176mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-13(19.35mm,10.125mm) on Top Layer And Pad IC1-14(18.7mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1838.926mil|Location2.Y=1850.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.603mil|Location2.X=2303.853mil|Location1.Y=1838.926mil|Location2.Y=1850.176mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-14(18.7mm,10.125mm) on Top Layer And Pad IC1-15(18.05mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2267.013mil|Location2.X=2278.263mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-15(18.05mm,10.125mm) on Top Layer And Pad IC1-16(17.4mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-16(17.4mm,10.125mm) on Top Layer And Pad IC1-17(16.75mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-17(16.75mm,10.125mm) on Top Layer And Pad IC1-18(16.1mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-18(16.1mm,10.125mm) on Top Layer And Pad IC1-19(15.45mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-19(15.45mm,10.125mm) on Top Layer And Pad IC1-20(14.8mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-2(12.85mm,2.875mm) on Top Layer And Pad IC1-3(13.5mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2076.068mil|Location2.X=2087.318mil|Location1.Y=1492.899mil|Location2.Y=1504.149mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2076.068mil|Location2.X=2087.318mil|Location1.Y=1492.899mil|Location2.Y=1504.149mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.172mm &lt; 0.254mm) Between Pad IC1-2(12.85mm,2.875mm) on Top Layer And Via (12.875mm,1.125mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-20(14.8mm,10.125mm) on Top Layer And Pad IC1-21(14.15mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-21(14.15mm,10.125mm) on Top Layer And Pad IC1-22(13.5mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.879mil|Location2.X=2099.129mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-22(13.5mm,10.125mm) on Top Layer And Pad IC1-23(12.85mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2062.288mil|Location2.X=2073.538mil|Location1.Y=1781.714mil|Location2.Y=1792.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-23(12.85mm,10.125mm) on Top Layer And Pad IC1-24(12.2mm,10.125mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2113.469mil|Location2.X=2124.719mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-3(13.5mm,2.875mm) on Top Layer And Pad IC1-4(14.15mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.485mil|Location2.X=2101.088mil|Location1.Y=1492.119mil|Location2.Y=1503.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2087.485mil|Location2.X=2101.088mil|Location1.Y=1492.119mil|Location2.Y=1503.369mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.222mm &lt; 0.254mm) Between Pad IC1-3(13.5mm,2.875mm) on Top Layer And Via (12.875mm,1.125mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.222mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2139.06mil|Location2.X=2150.31mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-4(14.15mm,2.875mm) on Top Layer And Pad IC1-5(14.8mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2164.651mil|Location2.X=2175.901mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-5(14.8mm,2.875mm) on Top Layer And Pad IC1-6(15.45mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2190.241mil|Location2.X=2201.491mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-6(15.45mm,2.875mm) on Top Layer And Pad IC1-7(16.1mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.832mil|Location2.X=2227.082mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-7(16.1mm,2.875mm) on Top Layer And Pad IC1-8(16.75mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.422mil|Location2.X=2252.672mil|Location1.Y=1553.493mil|Location2.Y=1564.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad IC1-8(16.75mm,2.875mm) on Top Layer And Pad IC1-9(17.4mm,2.875mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZXLLG3ZSJSX4DUEZHWQQUCE1TOM5S5HHWND0NEZPMKSFCUU1KO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2651.855mil|Location2.X=2663.105mil|Location1.Y=1877.249mil|Location2.Y=1888.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2651.855mil|Location2.X=2663.105mil|Location1.Y=1877.249mil|Location2.Y=1888.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(28mm,11.175mm) on Bottom Layer And Track (27.2mm,12.025mm)(28.8mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2647.918mil|Location2.X=2659.168mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2647.918mil|Location2.X=2659.168mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(28mm,11.175mm) on Bottom Layer And Track (27.2mm,8.625mm)(27.2mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2695.162mil|Location2.X=2706.412mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2695.162mil|Location2.X=2706.412mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(28mm,11.175mm) on Bottom Layer And Track (28.8mm,8.625mm)(28.8mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2647.918mil|Location2.X=2659.168mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2647.918mil|Location2.X=2659.168mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(28mm,9.475mm) on Bottom Layer And Track (27.2mm,8.625mm)(27.2mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2691.225mil|Location2.X=2702.475mil|Location1.Y=1759.139mil|Location2.Y=1770.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2691.225mil|Location2.X=2702.475mil|Location1.Y=1759.139mil|Location2.Y=1770.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(28mm,9.475mm) on Bottom Layer And Track (27.2mm,8.625mm)(28.8mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2695.162mil|Location2.X=2706.412mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2695.162mil|Location2.X=2706.412mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(28mm,9.475mm) on Bottom Layer And Track (28.8mm,8.625mm)(28.8mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2419.572mil|Location2.X=2430.822mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2419.572mil|Location2.X=2430.822mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(22.2mm,9.475mm) on Bottom Layer And Track (21.4mm,8.625mm)(21.4mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2462.879mil|Location2.X=2474.129mil|Location1.Y=1759.139mil|Location2.Y=1770.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2462.879mil|Location2.X=2474.129mil|Location1.Y=1759.139mil|Location2.Y=1770.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(22.2mm,9.475mm) on Bottom Layer And Track (21.4mm,8.625mm)(23mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2466.816mil|Location2.X=2478.066mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2466.816mil|Location2.X=2478.066mil|Location1.Y=1763.076mil|Location2.Y=1774.326mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(22.2mm,9.475mm) on Bottom Layer And Track (23mm,8.625mm)(23mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2423.509mil|Location2.X=2434.759mil|Location1.Y=1877.249mil|Location2.Y=1888.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2423.509mil|Location2.X=2434.759mil|Location1.Y=1877.249mil|Location2.Y=1888.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(22.2mm,11.175mm) on Bottom Layer And Track (21.4mm,12.025mm)(23mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2419.572mil|Location2.X=2430.822mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2419.572mil|Location2.X=2430.822mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(22.2mm,11.175mm) on Bottom Layer And Track (21.4mm,8.625mm)(21.4mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2466.816mil|Location2.X=2478.066mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2466.816mil|Location2.X=2478.066mil|Location1.Y=1830.005mil|Location2.Y=1841.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(22.2mm,11.175mm) on Bottom Layer And Track (23mm,8.625mm)(23mm,12.025mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2723.706mil|Location2.X=2734.956mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2723.706mil|Location2.X=2734.956mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C3-1(30.125mm,11.825mm) on Bottom Layer And Track (29.025mm,12.225mm)(29.125mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2723.706mil|Location2.X=2734.956mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2723.706mil|Location2.X=2734.956mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C3-1(30.125mm,11.825mm) on Bottom Layer And Track (29.125mm,10.875mm)(29.125mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2786.698mil|Location2.X=2797.948mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2786.698mil|Location2.X=2797.948mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C3-1(30.125mm,11.825mm) on Bottom Layer And Track (31.125mm,10.875mm)(31.125mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2786.698mil|Location2.X=2797.948mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2786.698mil|Location2.X=2797.948mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C3-1(30.125mm,11.825mm) on Bottom Layer And Track (31.125mm,12.225mm)(31.225mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.179mil|Location2.X=2788.429mil|Location1.Y=1727.187mil|Location2.Y=1738.437mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.179mil|Location2.X=2788.429mil|Location1.Y=1727.187mil|Location2.Y=1738.437mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.023mm &lt; 0.254mm) Between Pad C3-2(30.125mm,9.025mm) on Bottom Layer And Text "C3" (31.183mm,6.875mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.023mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2724.69mil|Location2.X=2735.94mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2724.69mil|Location2.X=2735.94mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C3-2(30.125mm,9.025mm) on Bottom Layer And Track (29.025mm,8.625mm)(29.175mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2785.713mil|Location2.X=2796.963mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2785.713mil|Location2.X=2796.963mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C3-2(30.125mm,9.025mm) on Bottom Layer And Track (31.075mm,8.625mm)(31.225mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2495.359mil|Location2.X=2506.609mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2495.359mil|Location2.X=2506.609mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C4-1(24.325mm,11.825mm) on Bottom Layer And Track (23.225mm,12.225mm)(23.325mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2495.359mil|Location2.X=2506.609mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2495.359mil|Location2.X=2506.609mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C4-1(24.325mm,11.825mm) on Bottom Layer And Track (23.325mm,10.875mm)(23.325mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.351mil|Location2.X=2569.601mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.351mil|Location2.X=2569.601mil|Location1.Y=1839.847mil|Location2.Y=1851.097mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C4-1(24.325mm,11.825mm) on Bottom Layer And Track (25.325mm,10.875mm)(25.325mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.351mil|Location2.X=2569.601mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.351mil|Location2.X=2569.601mil|Location1.Y=1892.997mil|Location2.Y=1904.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C4-1(24.325mm,11.825mm) on Bottom Layer And Track (25.325mm,12.225mm)(25.425mm,12.225mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2496.344mil|Location2.X=2507.594mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2496.344mil|Location2.X=2507.594mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C4-2(24.325mm,9.025mm) on Bottom Layer And Track (23.225mm,8.625mm)(23.375mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2557.367mil|Location2.X=2568.617mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2557.367mil|Location2.X=2568.617mil|Location1.Y=1751.265mil|Location2.Y=1762.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C4-2(24.325mm,9.025mm) on Bottom Layer And Track (25.275mm,8.625mm)(25.425mm,8.625mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPJ4ECGVIUBIZO20H0HFYJBZX2B0OUTWJMR5U01FJC0VVBUG2I2EK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2427.593mil|Location2.X=2435.259mil|Location1.Y=1934.356mil|Location2.Y=1942.022mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2427.593mil|Location2.X=2435.259mil|Location1.Y=1934.356mil|Location2.Y=1942.022mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C2" (22.258mm,12.15mm) on Bottom Overlay And Track (10.92mm,13.23mm)(31.24mm,13.23mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2440.712mil|Location2.X=2448.378mil|Location1.Y=1886.915mil|Location2.Y=1894.581mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2440.712mil|Location2.X=2448.378mil|Location1.Y=1886.915mil|Location2.Y=1894.581mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C2" (22.258mm,12.15mm) on Bottom Overlay And Track (21.4mm,12.025mm)(23mm,12.025mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2413.49mil|Location2.X=2421.156mil|Location1.Y=1886.915mil|Location2.Y=1894.581mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2413.49mil|Location2.X=2421.156mil|Location1.Y=1886.915mil|Location2.Y=1894.581mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C2" (22.258mm,12.15mm) on Bottom Overlay And Track (21.4mm,8.625mm)(21.4mm,12.025mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2453.235mil|Location2.X=2464.485mil|Location1.Y=1912.682mil|Location2.Y=1923.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2453.235mil|Location2.X=2464.485mil|Location1.Y=1912.682mil|Location2.Y=1923.932mil|Absolute=True">Silk To Silk Clearance Constraint: (0.14mm &lt; 0.254mm) Between Text "C2" (22.258mm,12.15mm) on Bottom Overlay And Track (22.625mm,12.725mm)(23.225mm,12.725mm) on Bottom Overlay Silk Text to Silk Clearance [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2577.508mil|Location2.X=2588.758mil|Location1.Y=1841.155mil|Location2.Y=1852.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2577.508mil|Location2.X=2588.758mil|Location1.Y=1841.155mil|Location2.Y=1852.405mil|Absolute=True">Silk To Silk Clearance Constraint: (0.173mm &lt; 0.254mm) Between Text "C4" (26.825mm,11.408mm) on Bottom Overlay And Track (25.425mm,8.625mm)(25.425mm,12.225mm) on Bottom Overlay Silk Text to Silk Clearance [0.173mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2633.191mil|Location2.X=2644.441mil|Location1.Y=1854.274mil|Location2.Y=1865.524mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2633.191mil|Location2.X=2644.441mil|Location1.Y=1854.274mil|Location2.Y=1865.524mil|Absolute=True">Silk To Silk Clearance Constraint: (0.148mm &lt; 0.254mm) Between Text "C4" (26.825mm,11.408mm) on Bottom Overlay And Track (27.2mm,8.625mm)(27.2mm,12.025mm) on Bottom Overlay Silk Text to Silk Clearance [0.148mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2368.564mil|Location2.X=2379.962mil|Location1.Y=1766.242mil|Location2.Y=1777.492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2368.564mil|Location2.X=2379.962mil|Location1.Y=1766.242mil|Location2.Y=1777.492mil|Absolute=True">Silk To Silk Clearance Constraint: (0.044mm &lt; 0.254mm) Between Text "IC1" (21.4mm,6.892mm) on Top Overlay And Track (11.325mm,9.1mm)(20.225mm,9.1mm) on Top Overlay Silk Text to Silk Clearance [0.044mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2367.23mil|Location2.X=2374.896mil|Location1.Y=1684.829mil|Location2.Y=1692.495mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2367.23mil|Location2.X=2374.896mil|Location1.Y=1684.829mil|Location2.Y=1692.495mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "IC1" (21.4mm,6.892mm) on Top Overlay And Track (20.225mm,3.9mm)(20.225mm,9.1mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.041mil|Location2.X=2449.291mil|Location1.Y=1714.222mil|Location2.Y=1725.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.041mil|Location2.X=2449.291mil|Location1.Y=1714.222mil|Location2.Y=1725.472mil|Absolute=True">Silk To Silk Clearance Constraint: (0.087mm &lt; 0.254mm) Between Text "XP1" (22.109mm,7.85mm) on Top Overlay And Track (22.03mm,4.98mm)(22.03mm,7.52mm) on Top Overlay Silk Text to Silk Clearance [0.087mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2465.838mil|Location2.X=2477.088mil|Location1.Y=1714.221mil|Location2.Y=1725.471mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2465.838mil|Location2.X=2477.088mil|Location1.Y=1714.221mil|Location2.Y=1725.471mil|Absolute=True">Silk To Silk Clearance Constraint: (0.078mm &lt; 0.254mm) Between Text "XP1" (22.109mm,7.85mm) on Top Overlay And Track (22.03mm,7.52mm)(27.11mm,7.52mm) on Top Overlay Silk Text to Silk Clearance [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2372.278mil|Location2.X=2383.528mil|Location1.Y=1502.875mil|Location2.Y=1514.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2372.278mil|Location2.X=2383.528mil|Location1.Y=1502.875mil|Location2.Y=1514.125mil|Absolute=True">Silk To Silk Clearance Constraint: (0.084mm &lt; 0.254mm) Between Text "XP2" (20.367mm,1.15mm) on Top Overlay And Track (20.43mm,2.48mm)(20.43mm,5.02mm) on Top Overlay Silk Text to Silk Clearance [0.084mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2397.271mil|Location2.X=2408.521mil|Location1.Y=1502.876mil|Location2.Y=1514.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2397.271mil|Location2.X=2408.521mil|Location1.Y=1502.876mil|Location2.Y=1514.126mil|Absolute=True">Silk To Silk Clearance Constraint: (0.078mm &lt; 0.254mm) Between Text "XP2" (20.367mm,1.15mm) on Top Overlay And Track (20.43mm,2.48mm)(25.51mm,2.48mm) on Top Overlay Silk Text to Silk Clearance [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.225mil|Location2.X=1823.471mil|Location1.Y=1714.719mil|Location2.Y=1725.969mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.225mil|Location2.X=1823.471mil|Location1.Y=1714.719mil|Location2.Y=1725.969mil|Absolute=True">Silk To Silk Clearance Constraint: (0.175mm &lt; 0.254mm) Between Text "XP3" (6.267mm,7.875mm) on Top Overlay And Track (6.03mm,4.98mm)(6.03mm,7.52mm) on Top Overlay Silk Text to Silk Clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1842.152mil|Location2.X=1853.402mil|Location1.Y=1714.713mil|Location2.Y=1725.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1842.152mil|Location2.X=1853.402mil|Location1.Y=1714.713mil|Location2.Y=1725.963mil|Absolute=True">Silk To Silk Clearance Constraint: (0.103mm &lt; 0.254mm) Between Text "XP3" (6.267mm,7.875mm) on Top Overlay And Track (6.03mm,7.52mm)(11.11mm,7.52mm) on Top Overlay Silk Text to Silk Clearance [0.103mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.846mil|Location2.X=1754.096mil|Location1.Y=1502.875mil|Location2.Y=1514.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.846mil|Location2.X=1754.096mil|Location1.Y=1502.875mil|Location2.Y=1514.125mil|Absolute=True">Silk To Silk Clearance Constraint: (0.08mm &lt; 0.254mm) Between Text "XP4" (4.392mm,1.15mm) on Top Overlay And Track (4.43mm,2.48mm)(4.43mm,5.02mm) on Top Overlay Silk Text to Silk Clearance [0.08mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.333mil|Location2.X=1779.583mil|Location1.Y=1502.876mil|Location2.Y=1514.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\converter2\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.333mil|Location2.X=1779.583mil|Location1.Y=1502.876mil|Location2.Y=1514.126mil|Absolute=True">Silk To Silk Clearance Constraint: (0.078mm &lt; 0.254mm) Between Text "XP4" (4.392mm,1.15mm) on Top Overlay And Track (4.43mm,2.48mm)(9.51mm,2.48mm) on Top Overlay Silk Text to Silk Clearance [0.078mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
