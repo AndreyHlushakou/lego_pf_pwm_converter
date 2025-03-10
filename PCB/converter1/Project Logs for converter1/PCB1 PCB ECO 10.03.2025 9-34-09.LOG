@@ -1,0 +1,42 @@
+Removed Pin From Net: NetName=NetDD1_37 Pin=XP5-1
+Removed Pin From Net: NetName=NetDD1_34 Pin=XP5-2
+Removed Pin From Net: NetName=GND Pin=XP6-1
+Removed Pin From Net: NetName=VCC Pin=XP6-2
+Removed Pin From Net: NetName=+7.4 Pin=XP6-3
+Removed Pin From Net: NetName=NetDD1_38 Pin=XP6-4
+Removed Pin From Net: NetName=NetDD1_39 Pin=XP6-5
+Removed Pin From Net: NetName=NetDD1_40 Pin=XP6-6
+Removed Pin From Net: NetName=NetDD1_41 Pin=XP6-7
+Removed Pin From Net: NetName=NetDD1_42 Pin=XP6-8
+Removed Pin From Net: NetName=NetDD1_45 Pin=XP6-9
+Removed Pin From Net: NetName=NetDD1_46 Pin=XP6-10
+Removed Member From Class: ClassName=Sheet1 Member=XP5
+Removed Member From Class: ClassName=Sheet1 Member=XP6
+Added Component: Designator=XP?(PLS-12)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-12"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=XP?-1
+Added Pin To Net: NetName=VCC Pin=XP?-2
+Added Pin To Net: NetName=+7.4 Pin=XP?-3
+Added Pin To Net: NetName=NetDD1_34 Pin=XP?-4
+Added Pin To Net: NetName=NetDD1_37 Pin=XP?-5
+Added Pin To Net: NetName=NetDD1_38 Pin=XP?-6
+Added Pin To Net: NetName=NetDD1_39 Pin=XP?-7
+Added Pin To Net: NetName=NetDD1_40 Pin=XP?-8
+Added Pin To Net: NetName=NetDD1_41 Pin=XP?-9
+Added Pin To Net: NetName=NetDD1_42 Pin=XP?-10
+Added Pin To Net: NetName=NetDD1_45 Pin=XP?-11
+Added Pin To Net: NetName=NetDD1_46 Pin=XP?-12
+Added Member To Class: ClassName=Sheet1 Member=Component XP? Text

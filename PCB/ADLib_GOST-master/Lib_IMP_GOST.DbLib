@@ -1,7 +1,7 @@
 [OutputDatabaseLinkFile]
 Version=1.1
 [DatabaseLinks]
-ConnectionString=Provider=MICROSOFT.ACE.OLEDB.12.0;Data Source=D:\PROJECTS\STM32\lego_pf_pwm_converter\PCB\ADLib_GOST-master\Lib_IMP_GOST.mdb;Persist Security Info=False
+ConnectionString=Provider=MICROSOFT.ACE.OLEDB.12.0;Data Source=D:\0_PROJECTS\STM32\lego_pf_pwm_converter\PCB\ADLib_GOST-master\Lib_IMP_GOST.mdb;Persist Security Info=False
 AddMode=3
 RemoveMode=1
 UpdateMode=2
@@ -140,6 +140,9 @@ TableName=Переключатели - Движковые
 Enabled=True
 UserWhere=0
 UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=104|Library Ref0=90|Footprint Ref0=105|Footprint Ref 20=117|Footprint Ref 30=117|Footprint Ref 40=117|Library Path0=130|Footprint Path0=118|Sim Model Name0=130|Sim File0=71|Sim Kind0=78|Sim SubKind0=101|Sim Spice Prefix0=119|Sim Netlist0=90|Sim Port Map0=109|Sim Parameters0=120|ID0=39|Value0=78|Limit Voltage0=106|Limit Current0=106|Number of Positions0=150|Resistance0=88|Isolator Resistance0=138|Backlight0=80|Number of Contacts0=149|Specification0=100|Application Category0=153|Working Temperature Min0=187|Working Temperature Max0=189|Manufacturer0=108|Functional Analog0=135
 [Table21]
 SchemaName=
 TableName=Переключатели - Кнопочные
@@ -182,24 +185,24 @@ TableName=Светодиоды SMT - Общ
 Enabled=True
 UserWhere=0
 UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part Number0=150|Library Ref0=90|Footprint Ref0=105|Footprint Ref 20=117|Footprint Ref 30=117|Footprint Ref 40=117|Library Path0=113|Footprint Path0=115|Sim Model Name0=130|Sim File0=71|Sim Kind0=78|Sim SubKind0=101|Sim Spice Prefix0=119|Sim Netlist0=90|Sim Port Map0=109|Sim Parameters0=120|ID0=39|Value0=150|Forward Voltage0=126|Forward Current0=126|Power Dissipation0=134|Luminous Flux0=113|Color0=58|Leds0=53|Footprint0=82|Specification0=100|Application Category0=153|Working Temperature Min0=187|Working Temperature Max0=189|Manufacturer0=108|Functional Analog0=135
 [Table28]
 SchemaName=
 TableName=Светодиоды THM - Общ
 Enabled=True
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=94|Library Ref0=77|Footprint Ref0=94|Footprint Ref 20=101|Footprint Ref 30=101|Footprint Ref 40=101|Library Path0=94|Footprint Path0=98|Sim Model Name0=109|Sim File0=62|Sim Kind0=67|Sim SubKind0=87|Sim Spice Prefix0=102|Sim Netlist0=77|Sim Port Map0=91|Sim Parameters0=100|ID0=34|Value0=94|Forward Voltage0=109|Forward Current0=108|Power Dissipation0=116|Luminous Flux0=97|Color0=69|Leds0=46|Footprint0=72|Specification0=89|Application Category0=131|Working Temperature Min0=159|Working Temperature Max0=160|Manufacturer0=97|Functional Analog0=118
 [Table29]
 SchemaName=
 TableName=Соединители Электрические - Межплатные
 Enabled=True
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
+BrowserOrder_Sorting=Part Number0=Up
 BrowserOrder_Grouping=
-BrowserOrder_Visible=Part Number0=118|Library Ref0=77|Footprint Ref0=92|Footprint Ref 20=101|Footprint Ref 30=101|Footprint Ref 40=101|Library Path0=130|Footprint Path0=144|Sim Model Name0=109|Sim File0=62|Sim Kind0=67|Sim SubKind0=87|Sim Spice Prefix0=102|Sim Netlist0=77|Sim Port Map0=91|Sim Parameters0=100|ID0=34|Value0=118|Limit Voltage0=90|Limit Current0=89|Pins0=44|Connector Type0=104|Resistance0=77|Surface Finish0=95|Pitch0=48|Specification0=89|Application Category0=131|Working Temperature Min0=159|Working Temperature Max0=160|Manufacturer0=93|Functional Analog0=120
+BrowserOrder_Visible=Part Number0=155|Library Ref0=97|Footprint Ref0=105|Footprint Ref 20=117|Footprint Ref 30=117|Footprint Ref 40=117|Library Path0=155|Footprint Path0=176|Sim Model Name0=130|Sim File0=71|Sim Kind0=78|Sim SubKind0=101|Sim Spice Prefix0=119|Sim Netlist0=90|Sim Port Map0=109|Sim Parameters0=120|ID0=39|Value0=155|Limit Voltage0=106|Limit Current0=106|Pins0=50|Connector Type0=122|Resistance0=88|Surface Finish0=108|Pitch0=61|Specification0=100|Application Category0=153|Working Temperature Min0=187|Working Temperature Max0=189|Manufacturer0=108|Functional Analog0=158
 [Table30]
 SchemaName=
 TableName=Соединители Электрические - Общ

@@ -1,0 +1,42 @@
+Removed Pin From Net: NetName=NetDD1_7 Pin=DD1-7
+Removed Pin From Net: NetName=NetDD1_7 Pin=S1-2
+Removed Pin From Net: NetName=GND Pin=S1-3
+Removed Pin From Net: NetName=GND Pin=S1-4
+Removed Member From Class: ClassName=Sheet1 Member=S1
+Added Component: Designator=C3(C0603)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric Type"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "131"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "GRM188R71C104KA01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "18.05.2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Max"; Value = "+125°С"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Min"; Value = "-55°С"; VariantName = "[No Variations]"
+Added Component: Designator=SB1(DTSM-32)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Backlight"; Value = "NO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "27"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Isolator Resistance"; Value = "100meg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "50mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Contacts"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "DTSM-32"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "17.04.2014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "0.1ohm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Переключатель"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "DTSM-32"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetDD1_7 Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=NetDD1_7 Pin=DD1-44
+Added Pin To Net: NetName=NetDD1_7 Pin=SB1-1
+Added Pin To Net: NetName=GND Pin=SB1-2
+Change Net Name : Old Net Name=NetDD1_7 New Net Name=NetC3_1
+Added Member To Class: ClassName=Sheet1 Member=Component C3 Capacitor
+Added Member To Class: ClassName=Sheet1 Member=Component SB1 Text

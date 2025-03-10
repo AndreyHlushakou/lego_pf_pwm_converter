@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=NetC3_1 Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=NetC3_1 Pin=SB1-1
+Removed Pin From Net: NetName=GND Pin=SB1-2
+Removed Pin From Net: NetName=GND Pin=ZQ1-2
+Removed Pin From Net: NetName=GND Pin=ZQ1-4
+Removed Member From Class: ClassName=Sheet1 Member=C3
+Removed Member From Class: ClassName=Sheet1 Member=SB1
+Added Component: Designator=S1(SW_SDA02H1SBD)
+Add component (AddParameter): Name = "Availability"; Value = "Good"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/SDA02H1SBD/C&K/view-part/380509/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "C&K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "SDA02H1SBD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/SDA02H1SBD/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/SDA02H1SBD/C&K/view-part/380509/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC3_1 Pin=S1-COM1
+Added Pin To Net: NetName=GND Pin=S1-NO1
+Added Pin To Net: NetName=GND Pin=S1-NO2
+Change Net Name : Old Net Name=NetC3_1 New Net Name=NetDD1_44
+Added Pin To Net: NetName=NetDD1_7 Pin=DD1-7
+Added Pin To Net: NetName=NetDD1_7 Pin=S1-COM2
+Added Net: Name=NetDD1_7
+Added Member To Class: ClassName=Sheet1 Member=Component S1 SDA02H1SBD

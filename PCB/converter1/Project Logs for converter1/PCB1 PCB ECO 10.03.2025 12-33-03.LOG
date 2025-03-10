@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=SB1 Old Footprint=DTSM-32 New Footprint=L-KLS7-TS3303A-1.5-250-B
+Change component parameters: Designator = "SB1" ("SB1"); Footprint = "DTSM-32"; UniqueID = "\MJOYITHN" ("\MJOYITHN")
+Change component parameters (AddParameter): Name = "ID"; Value = "31"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "L-KLS7-TS3303A-1.5-250-B"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "17.04.2014"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Переключатель"; VariantName = "[No Variations]"

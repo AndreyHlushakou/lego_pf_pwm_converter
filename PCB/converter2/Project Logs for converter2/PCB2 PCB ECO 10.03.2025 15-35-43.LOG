@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=NetIC1_1 Pin=XP1-1
+Removed Pin From Net: NetName=+7.4 Pin=XP1-2
+Removed Pin From Net: NetName=NetIC1_5 Pin=XP2-1
+Removed Pin From Net: NetName=GND Pin=XP2-2
+Removed Pin From Net: NetName=NetIC1_11 Pin=XP3-1
+Removed Pin From Net: NetName=+7.4 Pin=XP3-2
+Removed Pin From Net: NetName=NetIC1_7 Pin=XP4-1
+Removed Pin From Net: NetName=GND Pin=XP4-2
+Added Pin To Net: NetName=+7.4 Pin=XP1-1
+Added Pin To Net: NetName=NetIC1_1 Pin=XP1-2
+Added Pin To Net: NetName=GND Pin=XP2-1
+Added Pin To Net: NetName=NetIC1_5 Pin=XP2-2
+Added Pin To Net: NetName=+7.4 Pin=XP3-1
+Added Pin To Net: NetName=NetIC1_11 Pin=XP3-2
+Added Pin To Net: NetName=GND Pin=XP4-1
+Added Pin To Net: NetName=NetIC1_7 Pin=XP4-2

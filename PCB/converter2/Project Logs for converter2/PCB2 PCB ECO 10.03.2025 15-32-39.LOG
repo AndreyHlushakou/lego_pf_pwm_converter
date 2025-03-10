@@ -1,0 +1,201 @@
+Added Component: Designator=C1(C0603)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric Type"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "131"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "GRM188R71C104KA01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "18.05.2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Max"; Value = "+125°С"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Min"; Value = "-55°С"; VariantName = "[No Variations]"
+Added Component: Designator=C2(C0603)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric Type"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "131"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "GRM188R71C104KA01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "18.05.2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Max"; Value = "+125°С"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Min"; Value = "-55°С"; VariantName = "[No Variations]"
+Added Component: Designator=C3(C3216-p)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ESR"; Value = "4ohm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "25"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Leakage Current"; Value = "600nA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "T491A106K006AT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "23.04.2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "6.3V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Max"; Value = "+125°С"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Min"; Value = "-55°С"; VariantName = "[No Variations]"
+Added Component: Designator=C4(C3216-p)
+Add component (AddParameter): Name = "Application Category"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ESR"; Value = "4ohm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "25"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Leakage Current"; Value = "600nA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "T491A106K006AT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "23.04.2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "6.3V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Max"; Value = "+125°С"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Temperature Min"; Value = "-55°С"; VariantName = "[No Variations]"
+Added Component: Designator=IC1(SSOP24)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TB6612FNG/Toshiba/view-part/6765825/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Toshiba"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TB6612FNG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TB6612FNG/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TB6612FNG/Toshiba/view-part/6765825/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=XP1(PLS-2)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2"; VariantName = "[No Variations]"
+Added Component: Designator=XP2(PLS-2)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2"; VariantName = "[No Variations]"
+Added Component: Designator=XP3(PLS-2)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2"; VariantName = "[No Variations]"
+Added Component: Designator=XP4(PLS-2)
+Add component (AddParameter): Name = "Connector Type"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ID"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Limit Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PLS-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "15momh"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Surface Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Вилка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PLS-2"; VariantName = "[No Variations]"
+Added Component: Designator=XS1(PBS-12)
+Add component (AddParameter): Name = "ID"; Value = "63"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "PBS-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "07.03.2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Andrew Danich"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Specification"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Розетка"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Connector"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+7.4 Pin=C1-1
+Added Pin To Net: NetName=+7.4 Pin=C3-1
+Added Pin To Net: NetName=+7.4 Pin=IC1-13
+Added Pin To Net: NetName=+7.4 Pin=IC1-14
+Added Pin To Net: NetName=+7.4 Pin=IC1-24
+Added Pin To Net: NetName=+7.4 Pin=XP1-2
+Added Pin To Net: NetName=+7.4 Pin=XP3-2
+Added Pin To Net: NetName=+7.4 Pin=XS1-1
+Added Net: Name=+7.4
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=IC1-3
+Added Pin To Net: NetName=GND Pin=IC1-4
+Added Pin To Net: NetName=GND Pin=IC1-9
+Added Pin To Net: NetName=GND Pin=IC1-10
+Added Pin To Net: NetName=GND Pin=IC1-18
+Added Pin To Net: NetName=GND Pin=XP2-2
+Added Pin To Net: NetName=GND Pin=XP4-2
+Added Pin To Net: NetName=GND Pin=XS1-3
+Added Net: Name=GND
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-1
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-2
+Added Pin To Net: NetName=NetIC1_1 Pin=XP1-1
+Added Net: Name=NetIC1_1
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-5
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-6
+Added Pin To Net: NetName=NetIC1_5 Pin=XP2-1
+Added Net: Name=NetIC1_5
+Added Pin To Net: NetName=NetIC1_7 Pin=IC1-7
+Added Pin To Net: NetName=NetIC1_7 Pin=IC1-8
+Added Pin To Net: NetName=NetIC1_7 Pin=XP4-1
+Added Net: Name=NetIC1_7
+Added Pin To Net: NetName=NetIC1_11 Pin=IC1-11
+Added Pin To Net: NetName=NetIC1_11 Pin=IC1-12
+Added Pin To Net: NetName=NetIC1_11 Pin=XP3-1
+Added Net: Name=NetIC1_11
+Added Pin To Net: NetName=NetIC1_15 Pin=IC1-15
+Added Pin To Net: NetName=NetIC1_15 Pin=XS1-11
+Added Net: Name=NetIC1_15
+Added Pin To Net: NetName=NetIC1_16 Pin=IC1-16
+Added Pin To Net: NetName=NetIC1_16 Pin=XS1-6
+Added Net: Name=NetIC1_16
+Added Pin To Net: NetName=NetIC1_17 Pin=IC1-17
+Added Pin To Net: NetName=NetIC1_17 Pin=XS1-7
+Added Net: Name=NetIC1_17
+Added Pin To Net: NetName=NetIC1_19 Pin=IC1-19
+Added Pin To Net: NetName=NetIC1_19 Pin=XS1-10
+Added Net: Name=NetIC1_19
+Added Pin To Net: NetName=NetIC1_21 Pin=IC1-21
+Added Pin To Net: NetName=NetIC1_21 Pin=XS1-9
+Added Net: Name=NetIC1_21
+Added Pin To Net: NetName=NetIC1_22 Pin=IC1-22
+Added Pin To Net: NetName=NetIC1_22 Pin=XS1-8
+Added Net: Name=NetIC1_22
+Added Pin To Net: NetName=NetIC1_23 Pin=IC1-23
+Added Pin To Net: NetName=NetIC1_23 Pin=XS1-12
+Added Net: Name=NetIC1_23
+Added Pin To Net: NetName=VCC Pin=C2-2
+Added Pin To Net: NetName=VCC Pin=C4-1
+Added Pin To Net: NetName=VCC Pin=IC1-20
+Added Pin To Net: NetName=VCC Pin=XS1-2
+Added Net: Name=VCC
+Added Class: Name=Sheet2

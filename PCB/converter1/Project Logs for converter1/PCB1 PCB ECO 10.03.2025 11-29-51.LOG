@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetDD1_44 Pin=S1-1
+Removed Pin From Net: NetName=NetDD1_7 Pin=S1-2
+Removed Pin From Net: NetName=GND Pin=S1-3
+Removed Pin From Net: NetName=GND Pin=S1-4
+Removed Member From Class: ClassName=Sheet1 Member=S1
+Added Component: Designator=S?(SW_1825059-6)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1825059-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetDD1_44 Pin=S?-1
+Added Pin To Net: NetName=NetDD1_7 Pin=S?-2
+Added Pin To Net: NetName=GND Pin=S?-3
+Added Pin To Net: NetName=GND Pin=S?-4
+Added Member To Class: ClassName=Sheet1 Member=Component S? 1825059-6
