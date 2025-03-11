@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetC1_2 Pin=ZQ1-3
+Change Component Footprint: Designator=ZQ1 Old Footprint=SMD 5x3.2mm New Footprint=XTAL_NX5032GA-8.000M-STD-CSU-1
+Change Component Comment : Designator=ZQ1 Old Comment=Crystal New Comment=NX5032GA-8.000M-STD-CSU-1
+Change component parameters: Designator = "ZQ1" ("ZQ1"); Footprint = "SMD 5x3.2mm"; UniqueID = "\CBNWNYRP" ("\CBNWNYRP")
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/NX5032GA-8.000M-STD-CSU-1/NDK+America%252C+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "NDK America,"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "NX5032GA-8.000M-STD-CSU-1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "SMD-2 NDK America, Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/NX5032GA-8.000M-STD-CSU-1/NDK+America%252C+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_2 Pin=ZQ1-2
